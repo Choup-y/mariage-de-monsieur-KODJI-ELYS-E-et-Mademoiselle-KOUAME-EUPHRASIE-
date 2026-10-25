@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7c1725">
+  <meta name="description" content="Invitation au mariage de Monsieur KODJI ELYSÉE et Mademoiselle KOUAME EUPHRASIE, le 10 avril 2027 à Abidjan.">
+  <title>Élysée & Euphrasie — Notre mariage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#7c1725;--red-dark:#4f1019;--green:#183e32;--ivory:#fbf7ef;--gold:#b99a55;--ink:#28221f;--muted:#746b62}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--ivory);color:var(--ink);font-family:Jost,Arial,sans-serif;font-weight:300}
+    a{color:inherit} .serif{font-family:"Bodoni Moda",Georgia,serif} .script{font-family:"Pinyon Script",cursive}
+    .topbar{position:absolute;z-index:2;top:0;left:0;width:100%;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:.76rem;letter-spacing:.17em;text-transform:uppercase}
+    .topbar .monogram{font-family:Cinzel,serif;color:#f0dca7;font-size:1rem;letter-spacing:.12em}
+    .hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(135deg,rgba(38,12,15,.78),rgba(30,24,19,.42)),url('photos/photo1.jpg') center/cover no-repeat,#4b2527;color:white;padding:110px 22px 70px}
+    .hero:before{content:"";position:absolute;inset:18px;border:1px solid rgba(220,190,120,.65);pointer-events:none}
+    .hero-inner{position:relative;max-width:850px;animation:rise 1.2s ease both}
+    .eyebrow{font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:#f0dca7}
+    h1{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(3.1rem,10vw,7.8rem);font-weight:400;line-height:.94;margin:28px 0 20px}
+    .amp{font-family:"Pinyon Script",cursive;color:#e1c17b;font-size:.72em}
+    .hero-date{font-family:Cinzel,serif;letter-spacing:.18em;font-size:clamp(.85rem,2vw,1.1rem);margin:28px 0}
+    .intro{max-width:520px;margin:0 auto 30px;line-height:1.8;color:#f5eee4}
+    .btn{display:inline-block;padding:14px 25px;background:var(--gold);color:#261d16;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:.72rem;border:0;cursor:pointer;transition:transform .25s,background .25s}
+    .btn:hover{transform:translateY(-3px);background:#d3b875}
+    section{padding:88px 7%} .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.25em;color:var(--red);font-weight:500}
+    h2{font:400 clamp(2.4rem,5vw,4.2rem)/1.08 "Bodoni Moda",Georgia,serif;margin:12px 0 18px}
+    .section-head p{color:var(--muted);line-height:1.8}
+    .ornament{display:flex;align-items:center;gap:15px;justify-content:center;color:var(--gold);margin:22px auto}
+    .ornament:before,.ornament:after{content:"";width:65px;height:1px;background:var(--gold)}
+    .countdown{background:var(--green);color:var(--ivory);text-align:center;padding:62px 7%}
+    .countdown h2{font-size:clamp(2.1rem,4vw,3.4rem)}
+    .timer{display:flex;justify-content:center;gap:clamp(12px,4vw,42px);flex-wrap:wrap;margin-top:32px}
+    .timebox{min-width:70px}.timebox strong{display:block;font:400 clamp(2.2rem,6vw,3.5rem) "Bodoni Moda",serif;color:#e2c681}.timebox span{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em}
+    .details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:1000px;margin:auto}
+    .detail-card{padding:34px 28px;border:1px solid #d9caa9;text-align:center;background:rgba(255,255,255,.45)}
+    .detail-card .symbol{font-size:1.5rem;color:var(--gold)} .detail-card h3{font:400 1.65rem "Bodoni Moda",serif;margin:15px 0}
+    .detail-card p{line-height:1.8;color:var(--muted);margin:6px 0}
+    .detail-card a{display:inline-block;margin-top:16px;color:var(--red);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+    .note{font-size:.82rem!important;font-style:italic}
+    .gallery{background:#f1e9dc}
+    .gallery-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery-grid img{width:100%;height:320px;object-fit:cover;background:#dfd4c2}
+    .gallery-grid img:first-child{grid-row:span 2;height:654px}
+    .rsvp{background:linear-gradient(140deg,#701522,#4c1018);color:#fff}
+    .rsvp .kicker{color:#e1c17b}.rsvp .section-head p{color:#eadfd8}
+    .form-wrap{max-width:720px;margin:auto;padding:clamp(22px,5vw,45px);background:var(--ivory);color:var(--ink);border:1px solid var(--gold)}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}
+    label{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em}
+    input,select,textarea{width:100%;font:400 1rem Jost,sans-serif;padding:13px 12px;border:1px solid #d6cbbb;background:#fffdf9;border-radius:0;color:var(--ink)}
+    textarea{min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:2px solid #c6a965;outline-offset:1px}
+    .form-note{grid-column:1/-1;color:var(--muted);font-size:.82rem;line-height:1.6}
+    .form-status{grid-column:1/-1;font-size:.95rem;line-height:1.6}
+    .submit{grid-column:1/-1;width:100%;font-family:Jost,sans-serif}
+    footer{text-align:center;padding:42px 20px;background:#211c19;color:#eee1c6}
+    footer .script{font-size:2.6rem;color:#d8bb75} footer p{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+    .fade{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}.fade.visible{opacity:1;transform:none}
+    @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    @media(max-width:700px){.topbar{padding:18px 8%;font-size:.62rem}.topbar .right{display:none}section{padding:68px 6%}.details-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{height:220px}.gallery-grid img:first-child{grid-row:auto;height:220px}.gallery-grid img:last-child{display:none}form{grid-template-columns:1fr}.field.full,.form-note,.form-status,.submit{grid-column:1}.hero:before{inset:12px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.fade{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Navigation">
+    <span class="monogram">E <span style="color:#fff"> & </span> E</span>
+    <span class="right">Le bonheur se partage</span>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <div class="hero-inner">
+      <div class="eyebrow">Avec la grâce de Dieu et l’amour de nos familles</div>
+      <h1>KODJI Élysée<br><span class="amp">&</span><br>KOUAME Euphrasie</h1>
+      <div class="ornament">✦</div>
+      <p class="intro">Deux cœurs, une promesse, une nouvelle histoire à écrire. Nous serions profondément heureux de partager ce jour unique avec vous.</p>
+      <div class="hero-date">SAMEDI · 10 AVRIL · 2027</div>
+      <a class="btn" href="#rsvp">Confirmer ma présence</a>
+    </div>
+  </header>
+
+  <section class="countdown">
+    <div class="kicker" style="color:#e2c681">Le compte à rebours</div>
+    <h2 class="serif">Le début de notre toujours</h2>
+    <div class="timer" aria-label="Compte à rebours">
+      <div class="timebox"><strong id="days">—</strong><span>Jours</span></div>
+      <div class="timebox"><strong id="hours">—</strong><span>Heures</span></div>
+      <div class="timebox"><strong id="minutes">—</strong><span>Minutes</span></div>
+      <div class="timebox"><strong id="seconds">—</strong><span>Secondes</span></div>
+    </div>
+  </section>
+
+  <section id="programme">
+    <div class="section-head fade">
+      <div class="kicker">Un jour inoubliable</div>
+      <h2>Le programme</h2>
+      <p>Nous avons hâte de vous retrouver pour célébrer notre union. Retrouvez ci-dessous les lieux prévus pour cette journée.</p>
+      <div class="ornament">✦</div>
+    </div>
+    <div class="details-grid">
+      <article class="detail-card fade">
+        <div class="symbol">✧</div><h3>La cérémonie</h3>
+        <p><strong>Hôtel de Ville de Cocody</strong></p>
+        <p>Salle de mariage — Mairie de Cocody<br>Abidjan, Côte d’Ivoire</p>
+        <p class="note">L’horaire exact sera communiqué aux invités.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4tel+de+Ville+de+Cocody+Abidjan" target="_blank" rel="noopener">Voir le lieu ↗</a>
+      </article>
+      <article class="detail-card fade">
+        <div class="symbol">✧</div><h3>La réception</h3>
+        <p><strong>The Rezy Event &amp; Lounge</strong></p>
+        <p>Rue H26<br>Abidjan, Côte d’Ivoire</p>
+        <p class="note">L’horaire exact sera communiqué aux invités.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">Voir le lieu ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie">
+    <div class="section-head fade">
+      <div class="kicker">Nos plus beaux souvenirs</div>
+      <h2>Un peu de nous</h2>
+      <p>Quelques images de notre histoire, en attendant de créer avec vous les souvenirs de cette journée.</p>
+      <div class="ornament">✦</div>
+    </div>
+    <div class="gallery-grid">
+      <img src="photos/photo2.jpg" alt="Souvenir des futurs mariés" loading="lazy">
+      <img src="photos/photo3.jpg" alt="Photo des futurs mariés" loading="lazy">
+      <img src="photos/photo4.jpg" alt="Un souvenir en amoureux" loading="lazy">
+      <img src="photos/photo5.jpg" alt="Un moment précieux" loading="lazy">
+      <img src="photos/photo2.jpg" alt="Souvenir de couple" loading="lazy">
+    </div>
+  </section>
+
+  <section id="rsvp" class="rsvp">
+    <div class="section-head fade">
+      <div class="kicker">Votre réponse compte beaucoup</div>
+      <h2>Confirmez votre présence</h2>
+      <p>Merci de répondre avant le <strong>5 avril 2027</strong>, afin de nous aider à préparer cette journée dans les meilleures conditions.</p>
+      <div class="ornament">✦</div>
+    </div>
+    <div class="form-wrap fade">
+      <!-- IMPORTANT : remplacez mnppjjjj par l'identifiant de votre formulaire Formspree. -->
+      <form id="rsvpForm" action="https://formspree.io/f/mnppjjjj" method="POST">
+        <div class="field"><label for="nom">Nom et prénom *</label><input id="nom" name="Nom et prénom" autocomplete="name" required placeholder="Votre nom complet"></div>
+        <div class="field"><label for="email">Adresse e-mail</label><input id="email" name="E-mail" type="email" autocomplete="email" placeholder="vous@exemple.com"></div>
+        <div class="field"><label for="presence">Votre réponse *</label><select id="presence" name="Réponse" required><option value="">Choisissez une réponse</option><option>Oui, je serai présent(e)</option><option>Non, je ne pourrai pas venir</option></select></div>
+        <div class="field"><label for="personnes">Nombre de personnes</label><select id="personnes" name="Nombre de personnes"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+        <div class="field full"><label for="message">Un petit mot pour les mariés</label><textarea id="message" name="Message" placeholder="Écrivez-nous un mot doux (facultatif)"></textarea></div>
+        <input type="hidden" name="_subject" value="Nouvelle réponse RSVP — Mariage Élysée & Euphrasie">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <p class="form-note">Les informations transmises servent uniquement à organiser le mariage et à gérer les réponses des invités.</p>
+        <button class="btn submit" type="submit">Envoyer ma réponse</button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="script">Élysée &amp; Euphrasie</div>
+    <p>10 avril 2027 · Abidjan, Côte d’Ivoire</p>
+    <p>Merci de faire partie de notre histoire</p>
+  </footer>
+
+  <script>
+    // Compte à rebours : heure locale du navigateur. Modifiez l'heure si vous la connaissez.
+    const weddingDate = new Date('2027-04-10T10:00:00');
+    function updateCountdown(){
+      const distance = weddingDate.getTime() - Date.now();
+      const safe = Math.max(0, distance);
+      document.getElementById('days').textContent = Math.floor(safe / 86400000);
+      document.getElementById('hours').textContent = Math.floor((safe % 86400000) / 3600000);
+      document.getElementById('minutes').textContent = Math.floor((safe % 3600000) / 60000);
+      document.getElementById('seconds').textContent = Math.floor((safe % 60000) / 1000);
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, {threshold: .12});
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    // Formspree gère l'envoi. Le formulaire ne peut fonctionner qu'après ajout du vrai identifiant.
+    const form = document.getElementById('rsvpForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const endpoint = form.getAttribute('action');
+      if(endpoint.includes('mnppjjjj')){
+        status.textContent = 'Le formulaire doit d’abord être relié à Formspree. Suivez le guide README inclus dans le dossier.';
+        status.style.color = '#9b2636';
+        return;
+      }
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true; button.textContent = 'Envoi en cours…';
+      try{
+        const response = await fetch(endpoint, {
+          method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}
+        });
+        if(response.ok){
+          status.textContent = 'Merci ! Votre réponse a bien été envoyée.';
+          status.style.color = '#183e32'; form.reset();
+        }else{
+          status.textContent = 'L’envoi a échoué. Vérifiez les informations et réessayez.';
+          status.style.color = '#9b2636';
+        }
+      }catch(error){
+        status.textContent = 'Connexion impossible. Vérifiez votre Internet puis réessayez.';
+        status.style.color = '#9b2636';
+      }finally{
+        button.disabled = false; button.textContent = 'Envoyer ma réponse';
+      }
+    });
+  </script>
+</body>
+</html>
