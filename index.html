@@ -1,525 +1,1009 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123d30">
-<title>KODJI ELYSEE & KOUAME EUPHRASIE | Mariage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b30">
+  <meta name="description" content="Invitation au mariage de KODJI ELYSEE et KOUAME EUPHRASIE, le 10 avril 2027 à Abidjan.">
+  <title>KODJI ELYSEE & KOUAME EUPHRASIE | Mariage</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --wine: #701d32;
-  --green: #123d30;
-  --gold: #c9a45c;
-  --ivory: #fff9ee;
-  --dark: #29221f;
-}
+  <style>
+    :root {
+      --green: #123b30;
+      --green-light: #205343;
+      --wine: #741d32;
+      --gold: #c9a45c;
+      --ivory: #fff9ee;
+      --cream: #f5ead8;
+      --text: #342820;
+    }
 
-* { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
 
-body {
-  margin: 0;
-  color: var(--dark);
-  background: var(--ivory);
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-}
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+    }
 
-h1, h2, .couple-names {
-  font-family: "Playfair Display", Georgia, serif;
-}
+    body.locked { overflow: hidden; }
 
-h2 {
-  font-size: clamp(30px, 7vw, 42px);
-  line-height: 1.3;
-  color: var(--wine);
-}
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.25;
+    }
 
-h3, .label, button, label {
-  font-family: "Montserrat", Arial, sans-serif;
-}
+    p { margin-top: 0; }
 
-.hero {
-  min-height: 100svh;
-  padding: 45px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--ivory);
-  background: linear-gradient(145deg, #123d30, #0d251e 60%, #701d32);
-  position: relative;
-}
+    img { max-width: 100%; display: block; }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid var(--gold);
-  pointer-events: none;
-}
+    a { color: inherit; }
 
-.label {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
-  font-weight: 600;
-}
+    button, input, select, textarea { font: inherit; }
 
-.couple-names {
-  font-size: clamp(35px, 9vw, 60px);
-  line-height: 1.25;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-  margin: 24px 0;
-}
+    button { cursor: pointer; }
 
-.amp {
-  display: block;
-  color: var(--gold);
-  font-size: .75em;
-  margin: 8px 0;
-}
+    .eyebrow {
+      color: var(--gold);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
 
-.hero p {
-  max-width: 520px;
-  margin: 12px auto;
-}
+    .section {
+      padding: 75px 20px;
+      text-align: center;
+    }
 
-.date {
-  color: var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+    .section-inner {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.envelope {
-  position: relative;
-  width: min(310px, 82vw);
-  height: 185px;
-  margin: 28px auto 16px;
-  background: var(--wine);
-  border: 2px solid var(--gold);
-  box-shadow: 0 15px 35px #0005;
-  cursor: pointer;
-  perspective: 700px;
-}
+    .section h2 {
+      margin: 10px 0 18px;
+      color: var(--green);
+      font-size: clamp(30px, 7vw, 44px);
+    }
 
-.letter {
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  bottom: 8px;
-  height: 135px;
-  background: var(--ivory);
-  color: var(--wine);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: transform .8s ease;
-  font-size: 16px;
-  line-height: 1.5;
-}
+    .gold-line {
+      width: 70px;
+      height: 2px;
+      margin: 22px auto;
+      background: var(--gold);
+    }
 
-.flap {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(140deg, #e6cb8e, var(--gold));
-  clip-path: polygon(0 0, 100% 0, 50% 68%);
-  transform-origin: top center;
-  transition: transform .8s ease;
-  z-index: 2;
-}
+    .primary-button {
+      display: inline-block;
+      padding: 14px 24px;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      background: var(--wine);
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background .25s, transform .25s;
+    }
 
-.seal {
-  position: absolute;
-  z-index: 3;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #f3d88f;
-  background: var(--wine);
-  color: var(--gold);
-  border-radius: 50%;
-  width: 58px;
-  height: 58px;
-  display: grid;
-  place-items: center;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 18px;
-  transition: opacity .3s;
-}
+    .primary-button:hover {
+      background: var(--green);
+      transform: translateY(-2px);
+    }
 
-.envelope.open .flap { transform: rotateX(180deg); }
-.envelope.open .seal { opacity: 0; }
-.envelope.open .letter { transform: translateY(-75px); }
+    /* OUVERTURE DE L'ENVELOPPE */
 
-.button {
-  display: inline-block;
-  padding: 13px 22px;
-  margin: 14px 0;
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: #211a12;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-}
+    #opening {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at top, #285746 0%, transparent 60%),
+        linear-gradient(145deg, #09251e, var(--green) 60%, #071b16);
+      transition: opacity 1s ease, visibility 1s ease;
+    }
 
-section {
-  padding: 58px 20px;
-  text-align: center;
-}
+    #opening.finished {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-section p {
-  max-width: 650px;
-  margin: 12px auto;
-}
+    .opening-content {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      color: var(--ivory);
+    }
 
-.section-green {
-  background: var(--green);
-  color: var(--ivory);
-}
+    .opening-label {
+      margin-bottom: 45px;
+      color: var(--gold);
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
 
-.section-green h2 { color: var(--gold); }
+    .envelope-scene {
+      position: relative;
+      width: min(82vw, 340px);
+      height: 235px;
+      margin: 0 auto 35px;
+      perspective: 1000px;
+    }
 
-.photo-main {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  max-height: 650px;
-  object-fit: cover;
-  margin: 25px auto;
-  border: 4px solid white;
-  outline: 1px solid var(--gold);
-}
+    .envelope {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 190px;
+      overflow: visible;
+      border: 1px solid #d3b878;
+      border-radius: 3px;
+      background: #7b1d34;
+      box-shadow: 0 18px 40px #0005;
+    }
 
-.gallery {
-  max-width: 760px;
-  margin: 25px auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
+    .envelope-back {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #8e2940, #64172a);
+    }
 
-.gallery img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border: 3px solid white;
-  outline: 1px solid #c9a45c;
-}
+    .invitation-card {
+      position: absolute;
+      z-index: 2;
+      right: 8%;
+      bottom: 8px;
+      left: 8%;
+      min-height: 170px;
+      padding: 18px 10px;
+      border: 1px solid var(--gold);
+      background: var(--ivory);
+      color: var(--green);
+      transition: transform 1.5s cubic-bezier(.2,.8,.2,1),
+                  opacity .8s ease;
+    }
 
-.photo-error {
-  display: none;
-  color: var(--wine);
-  font-size: 15px;
-}
+    .invitation-card .mini-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 28px auto;
-}
+    .invitation-card .mini-names {
+      margin: 10px 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(19px, 5vw, 26px);
+      line-height: 1.3;
+    }
 
-.time {
-  min-width: 72px;
-  padding: 13px 8px;
-  background: var(--green);
-  color: white;
-  border-bottom: 3px solid var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 12px;
-}
+    .envelope-flap {
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-right: calc(min(82vw, 340px) / 2) solid transparent;
+      border-bottom: 90px solid transparent;
+      border-left: calc(min(82vw, 340px) / 2) solid transparent;
+      border-top: 110px solid #a43a4d;
+      transform-origin: top center;
+      transition: transform .9s ease;
+    }
 
-.time strong {
-  display: block;
-  color: var(--gold);
-  font-size: 25px;
-}
+    .envelope-front {
+      position: absolute;
+      z-index: 3;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 110px;
+      background: linear-gradient(145deg, #8b263d, #6d192e);
+      clip-path: polygon(0 0, 50% 75%, 100% 0, 100% 100%, 0 100%);
+      pointer-events: none;
+    }
 
-.card {
-  max-width: 550px;
-  padding: 24px 18px;
-  margin: 20px auto;
-  background: white;
-  border: 1px solid var(--gold);
-}
+    .seal-button {
+      position: absolute;
+      z-index: 5;
+      top: 93px;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 65px;
+      height: 65px;
+      padding: 0;
+      border: 2px solid #e1c77d;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, #a63b4e, #681629 75%);
+      box-shadow: 0 4px 14px #0004, inset 0 0 0 3px #81243a;
+      color: #f2d995;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      transform: translateX(-50%);
+      transition: opacity .4s;
+    }
 
-.card h3 { color: var(--green); }
+    #opening.opening-now .envelope-flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
 
-form {
-  max-width: 520px;
-  margin: 25px auto 0;
-  text-align: left;
-}
+    #opening.opening-now .seal-button { opacity: 0; }
 
-label {
-  display: block;
-  margin: 15px 0 6px;
-  font-size: 15px;
-  font-weight: 600;
-}
+    #opening.opening-now .invitation-card {
+      transform: translateY(-205px);
+    }
 
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #88765c;
-  border-radius: 3px;
-  background: white;
-  color: #29221f;
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 17px;
-}
+    #opening.card-leaving .invitation-card {
+      transform: translateY(-270px);
+      opacity: 0;
+    }
 
-footer {
-  padding: 30px 20px;
-  text-align: center;
-  color: var(--ivory);
-  background: #0d251e;
-}
+    .open-button {
+      min-height: 50px;
+      padding: 14px 23px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--ivory);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-footer strong { color: var(--gold); }
+    .open-button:hover {
+      background: var(--gold);
+      color: var(--green);
+    }
 
-.music {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  z-index: 5;
-  border: 1px solid var(--gold);
-  border-radius: 28px;
-  background: var(--wine);
-  color: white;
-  padding: 12px 15px;
-  font-size: 13px;
-}
+    .opening-note {
+      margin-top: 22px;
+      color: #e9ddc6;
+      font-size: 13px;
+    }
 
-@media (max-width: 420px) {
-  body { font-size: 18px; }
-  .gallery img { height: 170px; }
-  section { padding: 45px 17px; }
-}
+    /* PRÉSENTATION DU COUPLE */
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
-</style>
+    #presentation {
+      position: fixed;
+      z-index: 900;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--green);
+      color: var(--ivory);
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .8s ease, visibility .8s ease;
+    }
+
+    #presentation.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .presentation-inner {
+      width: 100%;
+      max-width: 500px;
+      animation: rise-in 1.2s both;
+    }
+
+    .presentation-photo {
+      width: min(72vw, 290px);
+      height: min(72vw, 290px);
+      margin: 0 auto 25px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 12px 35px #0004;
+    }
+
+    .presentation-inner h1 {
+      margin: 10px 0;
+      color: var(--ivory);
+      font-size: clamp(27px, 7vw, 42px);
+    }
+
+    .presentation-date {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .presentation-skip {
+      margin-top: 25px;
+      border: 0;
+      background: transparent;
+      color: var(--ivory);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      font-size: 13px;
+    }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PAGE PRINCIPALE */
+
+    #main-site { opacity: 1; }
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 88svh;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 20px;
+      overflow: hidden;
+      background:
+        linear-gradient(#09251eaa, #09251e88),
+        url("photos/photo_1.png") center 40% / cover no-repeat,
+        var(--green);
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .hero .eyebrow { color: #f0d38b; }
+
+    .hero h1 {
+      margin: 25px 0 18px;
+      font-size: clamp(38px, 9vw, 72px);
+      text-shadow: 0 3px 20px #0006;
+    }
+
+    .hero-date {
+      margin-bottom: 30px;
+      color: #f4d99c;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+    }
+
+    .hero .primary-button {
+      background: var(--wine);
+    }
+
+    .intro {
+      padding: 28px 20px;
+      background: var(--wine);
+      color: var(--ivory);
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+    }
+
+    .countdown {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 30px 0 0;
+    }
+
+    .count-box {
+      min-width: 72px;
+      padding: 13px 8px;
+      border: 1px solid #c9a45c88;
+      background: white;
+    }
+
+    .count-box strong {
+      display: block;
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    .count-box span {
+      color: #756858;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .story-section { background: var(--cream); }
+
+    .story-text {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      border: 1px solid #c9a45c77;
+      background: white;
+      box-shadow: 0 8px 25px #392b1710;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+      background: var(--cream);
+    }
+
+    .gallery-caption {
+      padding: 15px;
+      color: var(--green);
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    .program-section {
+      background: var(--green);
+      color: var(--ivory);
+    }
+
+    .program-section h2 { color: var(--ivory); }
+
+    .program-section .eyebrow { color: var(--gold); }
+
+    .program-list {
+      max-width: 650px;
+      margin: 35px auto 0;
+      text-align: left;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 16px;
+      padding: 17px 8px;
+      border-bottom: 1px solid #c9a45c55;
+    }
+
+    .program-time {
+      color: var(--gold);
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .program-name { font-size: 17px; }
+
+    .venue-card {
+      max-width: 680px;
+      margin: 30px auto 0;
+      padding: 30px 20px;
+      border: 1px solid #c9a45c88;
+      background: white;
+    }
+
+    .venue-name {
+      color: var(--wine);
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+    }
+
+    .attire {
+      background: var(--cream);
+    }
+
+    .attire strong { color: var(--wine); }
+
+    .rsvp-section {
+      background: #fffdf8;
+    }
+
+    .rsvp-form {
+      display: grid;
+      gap: 16px;
+      max-width: 570px;
+      margin: 30px auto 0;
+      text-align: left;
+    }
+
+    .rsvp-form label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--green);
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .rsvp-form input,
+    .rsvp-form select,
+    .rsvp-form textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px;
+      border: 1px solid #d6c9b4;
+      border-radius: 2px;
+      background: white;
+      color: var(--text);
+    }
+
+    .rsvp-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .rsvp-form .primary-button {
+      width: 100%;
+    }
+
+    .rsvp-note {
+      color: #716354;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 45px 20px;
+      background: #09251e;
+      color: var(--ivory);
+      text-align: center;
+    }
+
+    footer .footer-names {
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    footer p { font-size: 14px; }
+
+    .music-button {
+      position: fixed;
+      z-index: 100;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: var(--wine);
+      color: white;
+      box-shadow: 0 5px 18px #0003;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 650px) {
+      .section { padding: 95px 30px; }
+      .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .gallery-card img { height: 360px; }
+      .program-item { grid-template-columns: 105px 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="locked">
 
-<header class="hero">
-  <div class="label">Une union bénie · Une promesse éternelle</div>
-  <p>Avec la grâce de Dieu, nous avons la joie de vous inviter à célébrer notre mariage.</p>
+  <!-- ENVELOPPE D'OUVERTURE -->
+  <div id="opening">
+    <div class="opening-content">
+      <div class="opening-label">Une invitation précieuse</div>
 
-  <h1 class="couple-names">
-    KODJI ELYSEE
-    <span class="amp">&</span>
-    KOUAME EUPHRASIE
-  </h1>
+      <div class="envelope-scene">
+        <div class="envelope">
+          <div class="envelope-back"></div>
 
-  <div class="date">SAMEDI 10 AVRIL 2027</div>
+          <div class="invitation-card">
+            <div class="mini-title">Invitation au mariage</div>
+            <div class="mini-names">KODJI ELYSEE<br>&amp;<br>KOUAME EUPHRASIE</div>
+            <div>10 avril 2027</div>
+          </div>
 
-  <div class="envelope" id="envelope" role="button" tabindex="0"
-       aria-label="Ouvrir l'enveloppe">
-    <div class="letter">
-      <strong>Vous êtes invités</strong>
-      <span>À partager notre bonheur ♥</span>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+
+          <button class="seal-button" id="seal-button" aria-label="Ouvrir le sceau">
+            E &amp; E
+          </button>
+        </div>
+      </div>
+
+      <button class="open-button" id="open-button">
+        OUVRIR NOTRE INVITATION
+      </button>
+
+      <div class="opening-note">Avec amour, nous vous invitons à partager notre bonheur.</div>
     </div>
-    <div class="flap"></div>
-    <div class="seal">E ♥ E</div>
   </div>
 
-  <p id="envelopeMessage" style="font-size:15px">
-    Touchez l'enveloppe pour l'ouvrir
-  </p>
-
-  <a class="button" href="#invitation">DÉCOUVRIR NOTRE INVITATION ↓</a>
-</header>
-
-<main id="invitation">
-
-<section>
-  <div class="label" style="color:#701d32">Deux cœurs · Une destinée</div>
-  <h2>Notre bonheur</h2>
-  <p>Nous serions honorés de vous avoir à nos côtés pour célébrer ce jour précieux et partager avec vous le début de notre vie à deux.</p>
-
-  <img class="photo-main"
-       src="photos/photo_1.png"
-       alt="Photo des futurs mariés"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <p class="photo-error">La photo de couverture n'est pas disponible. Vérifions son nom sur GitHub.</p>
-</section>
-
-<section style="background:#f0e4ce">
-  <div class="label" style="color:#701d32">Le grand jour approche</div>
-  <h2>Compte à rebours</h2>
-
-  <div class="countdown">
-    <div class="time"><strong id="days">—</strong>JOURS</div>
-    <div class="time"><strong id="hours">—</strong>HEURES</div>
-    <div class="time"><strong id="minutes">—</strong>MINUTES</div>
-    <div class="time"><strong id="seconds">—</strong>SECONDES</div>
-  </div>
-  <p>Samedi 10 avril 2027</p>
-</section>
-
-<section>
-  <div class="label" style="color:#701d32">Un jour inoubliable</div>
-  <h2>Le programme</h2>
-
-  <div class="card">
-    <h3>Bénédiction nuptiale</h3>
-    <p><strong>Date :</strong> samedi 10 avril 2027</p>
-    <p><strong>Lieu et heure :</strong> informations à confirmer.</p>
+  <!-- PRÉSENTATION AUTOMATIQUE DU COUPLE -->
+  <div id="presentation" aria-hidden="true">
+    <div class="presentation-inner">
+      <div class="eyebrow">Deux cœurs, une promesse</div>
+      <img
+        class="presentation-photo"
+        src="photos/photo_1.png"
+        alt="Photo de KODJI ELYSEE et KOUAME EUPHRASIE"
+      >
+      <h1>KODJI ELYSEE<br>&amp;<br>KOUAME EUPHRASIE</h1>
+      <div class="presentation-date">SAMEDI 10 AVRIL 2027</div>
+      <button class="presentation-skip" id="skip-presentation">
+        Découvrir notre invitation
+      </button>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Réception</h3>
-    <p>Nous partagerons ensemble la joie de cette journée.</p>
-    <p><strong>Lieu et heure :</strong> informations à confirmer.</p>
-  </div>
-</section>
+  <!-- SITE PRINCIPAL -->
+  <main id="main-site">
 
-<section style="background:#f0e4ce">
-  <div class="label" style="color:#701d32">Nos souvenirs</div>
-  <h2>Galerie photos</h2>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Le grand jour approche</div>
+        <h1>KODJI ELYSEE<br>&amp;<br>KOUAME EUPHRASIE</h1>
+        <div class="hero-date">SAMEDI 10 AVRIL 2027</div>
+        <p>Unis par l'amour, guidés par la grâce de Dieu.</p>
+        <a class="primary-button" href="#rsvp">Confirmer ma présence</a>
+      </div>
+    </header>
 
-  <div class="gallery">
-    <img src="photos/photo_2.png" alt="Photo des mariés 2" loading="lazy"
-         onerror="this.style.display='none'">
-    <img src="photos/photo-3.png" alt="Photo des mariés 3" loading="lazy"
-         onerror="this.style.display='none'">
-    <img src="photos/photo-4.png" alt="Photo des mariés 4" loading="lazy"
-         onerror="this.style.display='none'">
-    <img src="photos/photo_5.png" alt="Photo des mariés 5" loading="lazy"
-         onerror="this.style.display='none'">
-  </div>
-  <p>Quelques instants précieux de notre histoire.</p>
-</section>
+    <div class="intro">
+      « L'amour est patient, l'amour est plein de bonté. »
+      <div class="eyebrow" style="margin-top:8px">1 Corinthiens 13:4</div>
+    </div>
 
-<section class="section-green" id="rsvp">
-  <div class="label">Votre présence est un cadeau</div>
-  <h2>Confirmez votre présence</h2>
-  <p>Merci de nous faire savoir si vous serez parmi nous pour cette belle célébration.</p>
+    <section class="section">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Le compte à rebours</div>
+        <h2>Le début de notre éternité</h2>
+        <p>Nous avons hâte de célébrer ce jour avec vous.</p>
 
-  <form action="https://formspree.io/f/mnppjjjj" method="POST">
-    <label for="guestName">Votre nom complet</label>
-    <input id="guestName" name="Nom complet" required>
+        <div class="countdown" aria-label="Compte à rebours du mariage">
+          <div class="count-box"><strong id="days">--</strong><span>Jours</span></div>
+          <div class="count-box"><strong id="hours">--</strong><span>Heures</span></div>
+          <div class="count-box"><strong id="minutes">--</strong><span>Minutes</span></div>
+          <div class="count-box"><strong id="seconds">--</strong><span>Secondes</span></div>
+        </div>
+      </div>
+    </section>
 
-    <label for="attendance">Serez-vous présent(e) ?</label>
-    <select id="attendance" name="Présence" required>
-      <option value="">Choisir une réponse</option>
-      <option value="Oui">Oui, avec joie !</option>
-      <option value="Non">Non, malheureusement</option>
-    </select>
+    <section class="section story-section">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Notre histoire</div>
+        <h2>Un amour écrit par Dieu</h2>
+        <div class="gold-line"></div>
+        <p class="story-text">
+          Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
+          les taquineries de nos proches me surnommant « la femme de Respo »
+          annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
+          l’amour et la grâce de Dieu, nous sommes heureux de vous inviter à
+          célébrer le magnifique chapitre qui s’ouvre : notre mariage. 💍🙏
+        </p>
+      </div>
+    </section>
 
-    <label for="guests">Nombre de personnes</label>
-    <select id="guests" name="Nombre de personnes" required>
-      <option value="1">1 personne</option>
-      <option value="2">2 personnes</option>
-      <option value="3">3 personnes</option>
-      <option value="4">4 personnes</option>
-      <option value="5">5 personnes</option>
-    </select>
+    <section class="section">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Nos souvenirs</div>
+        <h2>Un peu de nous</h2>
+        <div class="gold-line"></div>
 
-    <label for="message">Votre petit mot (facultatif)</label>
-    <textarea id="message" name="Message" rows="4"></textarea>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
+            <div class="gallery-caption">Notre amour</div>
+          </div>
 
-    <button class="button" type="submit">ENVOYER MA RÉPONSE ♥</button>
-  </form>
-</section>
-</main>
+          <div class="gallery-card">
+            <img src="photos/photo_2.png" alt="Photo du marié" loading="lazy">
+            <div class="gallery-caption">Le marié</div>
+          </div>
 
-<footer>
-  <p>Avec amour et gratitude</p>
-  <p><strong>KODJI ELYSEE & KOUAME EUPHRASIE</strong></p>
-  <p>10 avril 2027</p>
-  <p>Deux cœurs, une promesse, pour la vie. ♥</p>
-</footer>
+          <div class="gallery-card">
+            <img src="photos/photo-5.png" alt="Photo de la mariée" loading="lazy">
+            <div class="gallery-caption">La mariée</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<audio id="music" loop>
-  <source src="je-suis-mariee.mp3" type="audio/mpeg">
-</audio>
-<button class="music" id="musicButton" type="button">♫ Activer la musique</button>
+    <section class="section program-section">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Samedi 10 avril 2027</div>
+        <h2>Le programme de notre journée</h2>
+        <div class="gold-line"></div>
 
-<script>
-const envelope = document.getElementById("envelope");
-const envelopeMessage = document.getElementById("envelopeMessage");
+        <div class="program-list">
+          <div class="program-item">
+            <div class="program-time">09 h 30</div>
+            <div class="program-name">Accueil des invités</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">11 h 30</div>
+            <div class="program-name">Début de la cérémonie</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">12 h 30</div>
+            <div class="program-name">Bénédiction nuptiale</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">13 h 30</div>
+            <div class="program-name">Déjeuner</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">14 h 30</div>
+            <div class="program-name">Prestation de ballet et surprises</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">16 h 00</div>
+            <div class="program-name">Remise de présents au couple</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">17 h 00</div>
+            <div class="program-name">Coupure du gâteau</div>
+          </div>
+          <div class="program-item">
+            <div class="program-time">18 h 00</div>
+            <div class="program-name">Fin de la cérémonie</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-function toggleEnvelope() {
-  const opened = envelope.classList.toggle("open");
-  envelopeMessage.textContent = opened
-    ? "Votre invitation est ouverte ♥"
-    : "Touchez l'enveloppe pour l'ouvrir";
-}
+    <section class="section">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Retrouvons-nous</div>
+        <h2>Le lieu de la célébration</h2>
+        <div class="gold-line"></div>
 
-envelope.addEventListener("click", toggleEnvelope);
-envelope.addEventListener("keydown", function(event) {
-  if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    toggleEnvelope();
-  }
-});
+        <div class="venue-card">
+          <div class="venue-name">The Rezy Event &amp; Lounge</div>
+          <p>Rue H26, Abidjan, Côte d’Ivoire</p>
+          <a
+            class="primary-button"
+            href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Rue+H26+Abidjan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Voir l'itinéraire</a>
+        </div>
+      </div>
+    </section>
 
-function updateCountdown() {
-  // Le mariage est prévu à minuit, heure d'Abidjan (UTC).
-  const target = new Date("2027-04-10T00:00:00Z").getTime();
-  const distance = target - Date.now();
+    <section class="section attire">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Dress code</div>
+        <h2>Tenue de fête</h2>
+        <div class="gold-line"></div>
+        <p>Nous vous invitons à porter votre plus belle tenue de fête pour partager ce moment unique avec nous.</p>
+      </div>
+    </section>
 
-  if (distance <= 0) {
-    ["days", "hours", "minutes", "seconds"].forEach(id => {
-      document.getElementById(id).textContent = "♥";
-    });
-    return;
-  }
+    <section class="section rsvp-section" id="rsvp">
+      <div class="section-inner reveal">
+        <div class="eyebrow">Votre présence nous honore</div>
+        <h2>Serez-vous des nôtres ?</h2>
+        <p>Merci de nous confirmer votre présence à notre grand jour.</p>
 
-  document.getElementById("days").textContent =
-    Math.floor(distance / 86400000);
-  document.getElementById("hours").textContent =
-    Math.floor(distance % 86400000 / 3600000);
-  document.getElementById("minutes").textContent =
-    Math.floor(distance % 3600000 / 60000);
-  document.getElementById("seconds").textContent =
-    Math.floor(distance % 60000 / 1000);
-}
+        <form class="rsvp-form" action="https://formspree.io/f/mnppjjjj" method="POST">
+          <div>
+            <label for="guest-name">Votre nom complet</label>
+            <input id="guest-name" type="text" name="nom" autocomplete="name" required>
+          </div>
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+          <div>
+            <label for="attendance">Votre réponse</label>
+            <select id="attendance" name="presence" required>
+              <option value="">Choisissez une réponse</option>
+              <option value="Présent(e)">Je serai présent(e)</option>
+              <option value="Absent(e)">Je ne pourrai pas être présent(e)</option>
+            </select>
+          </div>
 
-const music = document.getElementById("music");
-const musicButton = document.getElementById("musicButton");
+          <div>
+            <label for="guest-count">Nombre de personnes</label>
+            <select id="guest-count" name="nombre_de_personnes" required>
+              <option value="">Choisissez</option>
+              <option value="1">1 personne</option>
+              <option value="2">2 personnes</option>
+              <option value="3">3 personnes</option>
+              <option value="4">4 personnes</option>
+              <option value="5">5 personnes</option>
+            </select>
+          </div>
 
-musicButton.addEventListener("click", async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      musicButton.textContent = "♫ Couper la musique";
-    } catch (error) {
-      musicButton.textContent = "Musique indisponible";
+          <div>
+            <label for="guest-message">Un petit mot pour les mariés (facultatif)</label>
+            <textarea id="guest-message" name="message" placeholder="Votre message..."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="Nouvelle réponse à l'invitation de mariage">
+
+          <button class="primary-button" type="submit">Envoyer ma réponse</button>
+          <p class="rsvp-note">Merci de répondre afin de nous aider à préparer cette belle journée.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-names">KODJI ELYSEE &amp; KOUAME EUPHRASIE</div>
+      <p>Merci de faire partie de notre histoire.</p>
+      <p>#ElyseeEtEuphrasie2027</p>
+      <p>Avec amour, pour toujours. ♥</p>
+    </footer>
+
+  </main>
+
+  <!-- MUSIQUE : le fichier doit être à la racine du dépôt -->
+  <audio id="wedding-music" loop preload="none">
+    <source src="je-suis-mariee.mp3" type="audio/mpeg">
+  </audio>
+
+  <button
+    class="music-button"
+    id="music-button"
+    aria-label="Activer ou arrêter la musique"
+    title="Musique"
+  >♫</button>
+
+  <script>
+    const opening = document.getElementById("opening");
+    const presentation = document.getElementById("presentation");
+    const openButton = document.getElementById("open-button");
+    const sealButton = document.getElementById("seal-button");
+    const skipButton = document.getElementById("skip-presentation");
+    let invitationStarted = false;
+    let presentationTimer;
+
+    function showMainSite() {
+      clearTimeout(presentationTimer);
+      presentation.classList.remove("visible");
+      presentation.setAttribute("aria-hidden", "true");
+      opening.classList.add("finished");
+      document.body.classList.remove("locked");
     }
-  } else {
-    music.pause();
-    musicButton.textContent = "♫ Activer la musique";
-  }
-});
-</script>
+
+    function startInvitation() {
+      if (invitationStarted) return;
+      invitationStarted = true;
+
+      opening.classList.add("opening-now");
+      openButton.disabled = true;
+      sealButton.disabled = true;
+
+      // La carte sort complètement de l'enveloppe.
+      window.setTimeout(() => {
+        opening.classList.add("card-leaving");
+      }, 1700);
+
+      // Présentation de la photo du couple.
+      window.setTimeout(() => {
+        opening.classList.add("finished");
+        presentation.classList.add("visible");
+        presentation.setAttribute("aria-hidden", "false");
+      }, 2600);
+
+      // Affichage automatique du site après la présentation.
+      presentationTimer = window.setTimeout(showMainSite, 8500);
+    }
+
+    openButton.addEventListener("click", startInvitation);
+    sealButton.addEventListener("click", startInvitation);
+    skipButton.addEventListener("click", showMainSite);
+
+    // Compte à rebours jusqu'au 10 avril 2027.
+    const weddingDate = new Date("2027-04-10T09:30:00+00:00").getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = weddingDate - now;
+      const ids = ["days", "hours", "minutes", "seconds"];
+
+      if (distance <= 0) {
+        ids.forEach(id => document.getElementById(id).textContent = "0");
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(distance / 86400000);
+      document.getElementById("hours").textContent =
+        Math.floor((distance % 86400000) / 3600000);
+      document.getElementById("minutes").textContent =
+        Math.floor((distance % 3600000) / 60000);
+      document.getElementById("seconds").textContent =
+        Math.floor((distance % 60000) / 1000);
+    }
+
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+
+    // Animations discrètes lors du défilement.
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("shown");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("shown"));
+    }
+
+    // La musique démarre uniquement après une action de l'utilisateur.
+    const music = document.getElementById("wedding-music");
+    const musicButton = document.getElementById("music-button");
+
+    musicButton.addEventListener("click", async () => {
+      if (music.paused) {
+        try {
+          await music.play();
+          musicButton.textContent = "♫";
+          musicButton.setAttribute("aria-label", "Arrêter la musique");
+        } catch (error) {
+          alert("La musique n'a pas pu démarrer. Vérifie que le fichier je-suis-mariee.mp3 est bien présent à la racine du dépôt GitHub.");
+        }
+      } else {
+        music.pause();
+        musicButton.textContent = "♪";
+        musicButton.setAttribute("aria-label", "Activer la musique");
+      }
+    });
+  </script>
 </body>
 </html>
