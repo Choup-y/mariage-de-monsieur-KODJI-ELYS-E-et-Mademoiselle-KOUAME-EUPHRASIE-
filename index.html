@@ -670,7 +670,7 @@
       <div class="envelope">
         <div class="envelope-flap"></div>
         <div class="wax-seal">
-          <strong>K & E</strong>
+          <strong>E &amp; E</strong>
           <span>AMOUR</span>
         </div>
       </div>
@@ -688,7 +688,7 @@
       <img class="presentation-photo" src="photos/photo_1.png" alt="Photo des futurs mariés">
       <div class="eyebrow">Le début d'une belle histoire</div>
       <h2>KODJI ELYSEE</h2>
-      <div class="ampersand">&</div>
+      <div class="ampersand">&amp;</div>
       <h2>KOUAME EUPHRASIE</h2>
       <div class="gold-line"></div>
       <p>Samedi 10 avril 2027</p>
@@ -703,7 +703,7 @@
         <div class="eyebrow">Le bonheur se partage</div>
         <h1>
           KODJI ELYSEE
-          <span class="ampersand">&</span>
+          <span class="ampersand">&amp;</span>
           KOUAME EUPHRASIE
         </h1>
         <div class="gold-line"></div>
@@ -726,7 +726,7 @@
         <h2>Une histoire écrite par l'amour</h2>
         <div class="gold-line"></div>
         <p class="story-text">
-          Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
+          Alors qu’il m’avait remarquée bien avant que je ne m’en rende pas compte,
           les taquineries de nos proches me surnommant « la femme de Respo »
           annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
           l’amour et la grâce de Dieu, nous sommes heureux de vous inviter
@@ -742,7 +742,6 @@
         <p class="section-intro">Trois photos, une histoire et un amour à célébrer.</p>
       </div>
 
-      <!-- EXACTEMENT TROIS PHOTOS DANS LA GALERIE -->
       <div class="gallery-grid">
         <article class="gallery-card reveal">
           <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
@@ -755,7 +754,7 @@
         </article>
 
         <article class="gallery-card reveal">
-          <img src="photos/photo-5.png" alt="Photo de la mariée" loading="lazy">
+          <img src="photos/photo_5.png" alt="Photo de la mariée" loading="lazy">
           <h3>La mariée</h3>
         </article>
       </div>
@@ -919,37 +918,32 @@
         openButton.textContent = "Votre invitation s'ouvre…";
         opening.classList.add("opening-now");
 
-        // L'enveloppe s'ouvre, puis s'efface.
         window.setTimeout(() => {
           opening.classList.add("card-leaving");
         }, 900);
 
-        // La présentation des mariés apparaît ensuite.
         window.setTimeout(() => {
           opening.classList.add("finished");
           presentation.classList.add("visible");
         }, 1600);
 
-        // La page principale s'affiche automatiquement.
         window.setTimeout(() => {
           showMainSite();
         }, 5500);
       }
 
-      // Gestion du clic principal.
       openButton.addEventListener("click", startInvitation);
+
       openButton.addEventListener("touchend", function(event) {
         event.preventDefault();
         startInvitation();
       }, { passive: false });
 
-      // Permet aussi d'ouvrir en touchant l'enveloppe.
       opening.addEventListener("click", function(event) {
         if (event.target.closest("#open-button")) return;
         startInvitation();
       });
 
-      // Compte à rebours : 10 avril 2027 à 09 h 30, heure d'Abidjan.
       function updateCountdown() {
         const weddingDate = new Date("2027-04-10T09:30:00+00:00");
         const now = new Date();
@@ -969,7 +963,6 @@
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
 
-      // Musique : la lecture démarre après une action volontaire.
       musicButton.addEventListener("click", async () => {
         if (!musicStarted || music.paused) {
           try {
@@ -985,7 +978,6 @@
         }
       });
 
-      // Apparition progressive des sections.
       function startReveals() {
         const elements = document.querySelectorAll(".reveal");
 
