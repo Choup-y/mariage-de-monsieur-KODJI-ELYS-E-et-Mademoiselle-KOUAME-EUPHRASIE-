@@ -28,9 +28,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: "Lato", sans-serif;
@@ -40,27 +38,16 @@
       font-size: 17px;
     }
 
-    body.locked {
-      overflow: hidden;
-    }
+    body.locked { overflow: hidden; }
 
     h1, h2, h3 {
       font-family: "Playfair Display", serif;
       line-height: 1.3;
     }
 
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-    }
-
-    a {
-      color: inherit;
-    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; cursor: pointer; }
+    a { color: inherit; }
 
     .eyebrow {
       font-family: "Montserrat", sans-serif;
@@ -114,7 +101,7 @@
       transform: translateY(-2px);
     }
 
-    /* ENVELOPPE D'OUVERTURE */
+    /* ENVELOPPE */
 
     #opening {
       position: fixed;
@@ -138,9 +125,7 @@
       margin-bottom: 35px;
     }
 
-    .opening-caption .eyebrow {
-      margin-bottom: 12px;
-    }
+    .opening-caption .eyebrow { margin-bottom: 12px; }
 
     .opening-caption h1 {
       font-size: clamp(25px, 7vw, 37px);
@@ -150,7 +135,7 @@
     .opening-caption p {
       font-size: 14px;
       margin-top: 10px;
-      color: #f5ead8;
+      color: var(--cream);
     }
 
     .envelope-wrap {
@@ -222,6 +207,7 @@
       flex-direction: column;
       box-shadow: 0 4px 15px #0005;
       pointer-events: none;
+      transition: opacity .3s;
     }
 
     .wax-seal strong {
@@ -253,9 +239,7 @@
       z-index: 10;
     }
 
-    #open-button:disabled {
-      opacity: .8;
-    }
+    #open-button:disabled { opacity: .8; }
 
     .open-hint {
       color: var(--ivory);
@@ -268,10 +252,7 @@
       transform: rotateX(180deg);
     }
 
-    #opening.opening-now .wax-seal {
-      opacity: 0;
-      transition: opacity .3s;
-    }
+    #opening.opening-now .wax-seal { opacity: 0; }
 
     #opening.card-leaving .envelope-wrap {
       animation: envelopeExit 1s forwards;
@@ -290,7 +271,7 @@
       }
     }
 
-    /* PRÉSENTATION DES MARIÉS */
+    /* PRÉSENTATION */
 
     #presentation {
       position: fixed;
@@ -325,7 +306,7 @@
     .presentation-photo {
       display: block;
       width: 100%;
-      max-height: 43vh;
+      max-height: 38vh;
       object-fit: cover;
       object-position: center;
       margin: 0 auto 20px;
@@ -350,11 +331,11 @@
       margin-top: 15px;
     }
 
-    /* PAGE PRINCIPALE */
+    .presentation-content .btn { margin-top: 18px; }
 
-    #site {
-      display: none;
-    }
+    /* SITE PRINCIPAL */
+
+    #site { display: none; }
 
     #site.visible {
       display: block;
@@ -385,7 +366,7 @@
       width: 100%;
       padding: 35px 20px;
       border: 1px solid #c9a45c99;
-      background: #09271f38;
+      background: #09271f55;
     }
 
     .hero h1 {
@@ -408,9 +389,7 @@
       margin: 24px 0;
     }
 
-    .hero p {
-      font-size: 16px;
-    }
+    .hero p { font-size: 16px; }
 
     .countdown {
       display: flex;
@@ -442,9 +421,7 @@
       letter-spacing: 1px;
     }
 
-    .story {
-      background: white;
-    }
+    .story { background: white; }
 
     .story-text {
       max-width: 720px;
@@ -452,9 +429,7 @@
       font-size: 18px;
     }
 
-    .gallery {
-      background: var(--cream);
-    }
+    .gallery { background: var(--cream); }
 
     .gallery-grid {
       display: grid;
@@ -490,13 +465,9 @@
       color: var(--ivory);
     }
 
-    .program h2 {
-      color: var(--ivory);
-    }
+    .program h2 { color: var(--ivory); }
 
-    .program .section-intro {
-      color: #f5ead8;
-    }
+    .program .section-intro { color: var(--cream); }
 
     .timeline {
       max-width: 650px;
@@ -539,9 +510,9 @@
       margin-bottom: 12px;
     }
 
-    .attire {
-      background: var(--cream);
-    }
+    .venue-card .btn { margin-top: 20px; }
+
+    .attire { background: var(--cream); }
 
     .attire-symbol {
       color: var(--gold);
@@ -549,9 +520,7 @@
       margin-bottom: 12px;
     }
 
-    .rsvp {
-      background: white;
-    }
+    .rsvp { background: white; }
 
     .rsvp-form {
       max-width: 560px;
@@ -632,18 +601,14 @@
     }
 
     @media (min-width: 650px) {
-      .section {
-        padding: 95px 30px;
-      }
+      .section { padding: 95px 30px; }
 
       .gallery-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: start;
       }
 
-      .gallery-card img {
-        height: 330px;
-      }
+      .gallery-card img { height: 330px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -657,6 +622,11 @@
 </head>
 
 <body class="locked">
+
+  <!-- MUSIQUE : fichier MP3 à la racine du dépôt GitHub -->
+  <audio id="wedding-music" loop preload="auto">
+    <source src="Dieu%20a%20fait.mp3" type="audio/mpeg">
+  </audio>
 
   <!-- ENVELOPPE -->
   <section id="opening" aria-label="Ouvrir l'invitation">
@@ -676,13 +646,11 @@
       </div>
     </div>
 
-    <button id="open-button" type="button">
-      Ouvrir notre invitation
-    </button>
-    <p class="open-hint">Appuyez sur le bouton pour découvrir notre invitation</p>
+    <button id="open-button" type="button">Ouvrir notre invitation</button>
+    <p class="open-hint">Appuyez pour découvrir notre invitation et écouter notre musique</p>
   </section>
 
-  <!-- PRÉSENTATION -->
+  <!-- PRÉSENTATION DES MARIÉS -->
   <section id="presentation" aria-label="Présentation des mariés">
     <div class="presentation-content">
       <img class="presentation-photo" src="photos/photo_1.png" alt="Photo des futurs mariés">
@@ -692,6 +660,7 @@
       <h2>KOUAME EUPHRASIE</h2>
       <div class="gold-line"></div>
       <p>Samedi 10 avril 2027</p>
+      <button id="continue-button" class="btn" type="button">Découvrir notre invitation</button>
     </div>
   </section>
 
@@ -701,11 +670,7 @@
     <header class="hero">
       <div class="hero-content">
         <div class="eyebrow">Le bonheur se partage</div>
-        <h1>
-          KODJI ELYSEE
-          <span class="ampersand">&amp;</span>
-          KOUAME EUPHRASIE
-        </h1>
+        <h1>KODJI ELYSEE <span class="ampersand">&amp;</span> KOUAME EUPHRASIE</h1>
         <div class="gold-line"></div>
         <p>Avec la grâce de Dieu et entourés de ceux que nous aimons,</p>
         <p>nous avons la joie de vous inviter à notre mariage.</p>
@@ -726,7 +691,7 @@
         <h2>Une histoire écrite par l'amour</h2>
         <div class="gold-line"></div>
         <p class="story-text">
-          Alors qu’il m’avait remarquée bien avant que je ne m’en rende pas compte,
+          Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
           les taquineries de nos proches me surnommant « la femme de Respo »
           annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
           l’amour et la grâce de Dieu, nous sommes heureux de vous inviter
@@ -747,12 +712,10 @@
           <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
           <h3>Nous deux</h3>
         </article>
-
         <article class="gallery-card reveal">
           <img src="photos/photo_2.png" alt="Photo du marié" loading="lazy">
           <h3>Le marié</h3>
         </article>
-
         <article class="gallery-card reveal">
           <img src="photos/photo_5.png" alt="Photo de la mariée" loading="lazy">
           <h3>La mariée</h3>
@@ -764,44 +727,18 @@
       <div class="reveal">
         <div class="eyebrow">Réservez cette journée</div>
         <h2>Le programme du mariage</h2>
-        <p class="section-intro">
-          Nous serons heureux de partager ces précieux moments avec vous.
-        </p>
+        <p class="section-intro">Nous serons heureux de partager ces précieux moments avec vous.</p>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item">
-          <time>09 h 30</time>
-          <div><h3>Accueil des invités</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>11 h 30</time>
-          <div><h3>Début de la cérémonie</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>12 h 30</time>
-          <div><h3>Bénédiction nuptiale</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>13 h 30</time>
-          <div><h3>Déjeuner</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>14 h 30</time>
-          <div><h3>Prestation de ballet et surprise</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>16 h 00</time>
-          <div><h3>Remise de présents au couple</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>17 h 00</time>
-          <div><h3>Coupure du gâteau</h3></div>
-        </div>
-        <div class="timeline-item">
-          <time>18 h 00</time>
-          <div><h3>Fin de la cérémonie</h3></div>
-        </div>
+        <div class="timeline-item"><time>09 h 30</time><div><h3>Accueil des invités</h3></div></div>
+        <div class="timeline-item"><time>11 h 30</time><div><h3>Début de la cérémonie</h3></div></div>
+        <div class="timeline-item"><time>12 h 30</time><div><h3>Bénédiction nuptiale</h3></div></div>
+        <div class="timeline-item"><time>13 h 30</time><div><h3>Déjeuner</h3></div></div>
+        <div class="timeline-item"><time>14 h 30</time><div><h3>Prestation de ballet et surprise</h3></div></div>
+        <div class="timeline-item"><time>16 h 00</time><div><h3>Remise de présents au couple</h3></div></div>
+        <div class="timeline-item"><time>17 h 00</time><div><h3>Coupure du gâteau</h3></div></div>
+        <div class="timeline-item"><time>18 h 00</time><div><h3>Fin de la cérémonie</h3></div></div>
       </div>
     </section>
 
@@ -814,9 +751,7 @@
           <p>Rue H26, Abidjan, Côte d’Ivoire</p>
           <div class="gold-line"></div>
           <p>Samedi 10 avril 2027</p>
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">
-            Voir l'itinéraire
-          </a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">Voir l'itinéraire</a>
         </div>
       </div>
     </section>
@@ -834,169 +769,11 @@
       <div class="reveal">
         <div class="eyebrow">Votre présence nous honore</div>
         <h2>Confirmez votre présence</h2>
-        <p class="section-intro">
-          Merci de nous faire savoir si vous serez parmi nous pour cette journée inoubliable.
-        </p>
+        <p class="section-intro">Merci de nous faire savoir si vous serez parmi nous pour cette journée inoubliable.</p>
       </div>
 
       <form class="rsvp-form" action="https://formspree.io/f/mnppjjjj" method="POST">
         <label for="guest-name">Votre nom complet</label>
-        <input id="guest-name" type="text" name="nom" autocomplete="name" required>
+        <input id="guest-name" name="Nom complet" type="text" autocomplete="name" required>
 
-        <label for="attendance">Serez-vous présent(e) ?</label>
-        <select id="attendance" name="presence" required>
-          <option value="">Choisissez une réponse</option>
-          <option value="Oui, je serai présent(e)">Oui, je serai présent(e)</option>
-          <option value="Désolé(e), je ne pourrai pas venir">Désolé(e), je ne pourrai pas venir</option>
-        </select>
-
-        <label for="guests">Nombre de personnes (vous compris)</label>
-        <select id="guests" name="nombre_de_personnes" required>
-          <option value="1">1 personne</option>
-          <option value="2">2 personnes</option>
-          <option value="3">3 personnes</option>
-          <option value="4">4 personnes</option>
-          <option value="5">5 personnes</option>
-        </select>
-
-        <label for="message">Un petit mot pour les mariés (facultatif)</label>
-        <textarea id="message" name="message" placeholder="Votre message..."></textarea>
-
-        <button class="btn" type="submit">Envoyer ma réponse</button>
-      </form>
-    </section>
-
-    <footer>
-      <div class="eyebrow">Unis par l'amour et la grâce de Dieu</div>
-      <p class="names">KODJI ELYSEE &amp; KOUAME EUPHRASIE</p>
-      <p>10 avril 2027</p>
-      <div class="gold-line"></div>
-      <p>Merci de faire partie de notre histoire. ❤️</p>
-    </footer>
-
-    <audio id="wedding-music" src="je-suis-mariee.mp3" loop preload="none"></audio>
-    <button id="music-button" class="music-control" type="button" hidden>
-      ♫ Activer la musique
-    </button>
-
-  </main>
-
-  <script>
-    (() => {
-      "use strict";
-
-      const opening = document.getElementById("opening");
-      const openButton = document.getElementById("open-button");
-      const presentation = document.getElementById("presentation");
-      const site = document.getElementById("site");
-      const music = document.getElementById("wedding-music");
-      const musicButton = document.getElementById("music-button");
-
-      let invitationStarted = false;
-      let musicStarted = false;
-
-      function showMainSite() {
-        presentation.classList.remove("visible");
-        opening.classList.add("finished");
-        site.classList.add("visible");
-        document.body.classList.remove("locked");
-        musicButton.hidden = false;
-
-        setTimeout(() => {
-          opening.style.display = "none";
-          presentation.style.display = "none";
-        }, 900);
-
-        startReveals();
-      }
-
-      function startInvitation() {
-        if (invitationStarted) return;
-        invitationStarted = true;
-
-        openButton.disabled = true;
-        openButton.textContent = "Votre invitation s'ouvre…";
-        opening.classList.add("opening-now");
-
-        window.setTimeout(() => {
-          opening.classList.add("card-leaving");
-        }, 900);
-
-        window.setTimeout(() => {
-          opening.classList.add("finished");
-          presentation.classList.add("visible");
-        }, 1600);
-
-        window.setTimeout(() => {
-          showMainSite();
-        }, 5500);
-      }
-
-      openButton.addEventListener("click", startInvitation);
-
-      openButton.addEventListener("touchend", function(event) {
-        event.preventDefault();
-        startInvitation();
-      }, { passive: false });
-
-      opening.addEventListener("click", function(event) {
-        if (event.target.closest("#open-button")) return;
-        startInvitation();
-      });
-
-      function updateCountdown() {
-        const weddingDate = new Date("2027-04-10T09:30:00+00:00");
-        const now = new Date();
-        const difference = weddingDate.getTime() - now.getTime();
-        const safeDifference = Math.max(0, difference);
-
-        document.getElementById("days").textContent =
-          Math.floor(safeDifference / 86400000);
-        document.getElementById("hours").textContent =
-          Math.floor((safeDifference % 86400000) / 3600000);
-        document.getElementById("minutes").textContent =
-          Math.floor((safeDifference % 3600000) / 60000);
-        document.getElementById("seconds").textContent =
-          Math.floor((safeDifference % 60000) / 1000);
-      }
-
-      updateCountdown();
-      window.setInterval(updateCountdown, 1000);
-
-      musicButton.addEventListener("click", async () => {
-        if (!musicStarted || music.paused) {
-          try {
-            await music.play();
-            musicStarted = true;
-            musicButton.textContent = "♫ Mettre la musique en pause";
-          } catch (error) {
-            musicButton.textContent = "Musique indisponible";
-          }
-        } else {
-          music.pause();
-          musicButton.textContent = "♫ Reprendre la musique";
-        }
-      });
-
-      function startReveals() {
-        const elements = document.querySelectorAll(".reveal");
-
-        if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("shown");
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.1 });
-
-          elements.forEach((element) => observer.observe(element));
-        } else {
-          elements.forEach((element) => element.classList.add("shown"));
-        }
-      }
-    })();
-  </script>
-</body>
-</html>
+        <labe
