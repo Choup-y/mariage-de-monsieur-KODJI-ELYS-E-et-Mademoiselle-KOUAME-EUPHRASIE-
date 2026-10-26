@@ -1,973 +1,1010 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123d30">
-
-<title>KODJI ELYSEE & KOUAME EUPHRASIE | Mariage</title>
-<meta name="description" content="Invitation au mariage de KODJI ELYSEE et KOUAME EUPHRASIE, le samedi 10 avril 2027.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --wine: #701d32;
-  --red: #8e243b;
-  --green: #123d30;
-  --green-light: #1b5141;
-  --gold: #c9a45c;
-  --ivory: #fff9ee;
-  --cream: #f0e4ce;
-  --dark: #29221f;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--ivory);
-  color: var(--dark);
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-body.locked {
-  overflow: hidden;
-}
-
-h1, h2, .couple-names {
-  font-family: "Playfair Display", Georgia, serif;
-}
-
-h2 {
-  font-size: clamp(30px, 7vw, 44px);
-  line-height: 1.3;
-  color: var(--wine);
-  margin: 12px 0 22px;
-}
-
-h3, button, label, .label {
-  font-family: "Montserrat", Arial, sans-serif;
-}
-
-p {
-  overflow-wrap: anywhere;
-}
-
-button, a, input, select, textarea {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 4px;
-}
-
-/* =========================
-   OUVERTURE DE L'INVITATION
-========================= */
-
-#opening {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 18px;
-  overflow: hidden;
-  text-align: center;
-  color: var(--ivory);
-  background:
-    radial-gradient(ellipse at top, #285a45 0%, transparent 55%),
-    linear-gradient(145deg, #123d30, #0b241c 65%, #451222);
-  transition: opacity 1s ease, visibility 1s ease;
-}
-
-#opening::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid var(--gold);
-  pointer-events: none;
-}
-
-#opening.finished {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.opening-label {
-  color: var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.opening-title {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(25px, 7vw, 38px);
-  line-height: 1.35;
-  margin: 0 0 18px;
-}
-
-.opening-description {
-  max-width: 340px;
-  margin: 0 auto 20px;
-  font-size: 16px;
-}
-
-.envelope-scene {
-  position: relative;
-  width: min(320px, 84vw);
-  height: 225px;
-  margin: 12px auto 18px;
-  perspective: 1000px;
-}
-
-.envelope {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 180px;
-  background: var(--wine);
-  border: 2px solid var(--gold);
-  box-shadow: 0 18px 40px #0006;
-}
-
-.envelope-back {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, #8c2a42, #5b1428);
-}
-
-.invitation-card {
-  position: absolute;
-  z-index: 2;
-  left: 8%;
-  width: 84%;
-  height: 165px;
-  bottom: 8px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--ivory);
-  color: var(--wine);
-  border: 1px solid var(--gold);
-  box-shadow: 0 5px 20px #0003;
-  transition:
-    transform 1.35s cubic-bezier(.2,.75,.25,1),
-    opacity .8s ease;
-}
-
-.invitation-card strong {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 21px;
-}
-
-.invitation-card span {
-  font-size: 14px;
-}
-
-.envelope-front {
-  position: absolute;
-  z-index: 3;
-  inset: 0;
-  background: linear-gradient(145deg, #8d2942, #64182d);
-  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
-  pointer-events: none;
-}
-
-.envelope-flap {
-  position: absolute;
-  z-index: 4;
-  inset: 0;
-  background: linear-gradient(145deg, #d7b66e, var(--gold));
-  clip-path: polygon(0 0, 100% 0, 50% 66%);
-  transform-origin: top center;
-  transition: transform 1s ease;
-  backface-visibility: hidden;
-}
-
-.wax-seal {
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  top: 48%;
-  width: 60px;
-  height: 60px;
-  display: grid;
-  place-items: center;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 2px solid #f1d99b;
-  background: var(--wine);
-  color: var(--gold);
-  box-shadow: 0 4px 10px #0004;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 19px;
-  transition: opacity .35s ease;
-}
-
-#opening.opening-now .envelope-flap {
-  transform: rotateX(180deg);
-}
-
-#opening.opening-now .wax-seal {
-  opacity: 0;
-}
-
-#opening.opening-now .invitation-card {
-  transform: translateY(-175px);
-}
-
-#opening.card-presented .invitation-card {
-  transform: translateY(-205px) scale(1.08);
-  opacity: 0;
-}
-
-#opening .opening-button {
-  position: relative;
-  z-index: 10;
-}
-
-.button {
-  display: inline-block;
-  padding: 13px 22px;
-  margin: 12px 0;
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: #211a12;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .3px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background .3s ease, transform .3s ease;
-}
-
-.button:hover {
-  background: #e0c47f;
-  transform: translateY(-2px);
-}
-
-.button-outline {
-  background: transparent;
-  color: var(--ivory);
-}
-
-#openingMessage {
-  min-height: 28px;
-  font-size: 14px;
-  color: var(--gold);
-}
-
-/* =========================
-   PRÉSENTATION AUTOMATIQUE
-========================= */
-
-#presentation {
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
-  overflow: hidden;
-  text-align: center;
-  color: var(--ivory);
-  background: #102d23;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1.1s ease, visibility 1.1s ease;
-}
-
-#presentation.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.presentation-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .43;
-  transform: scale(1.06);
-  transition: transform 7s ease, opacity 1s ease;
-}
-
-#presentation.visible .presentation-photo {
-  transform: scale(1);
-}
-
-.presentation-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    #081c17b3,
-    #123d308c 45%,
-    #080f0bd9
-  );
-}
-
-.presentation-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 650px;
-  animation: contentRise 1.3s both;
-}
-
-.presentation-small {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 12px;
-}
-
-.presentation-names {
-  margin: 25px 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(36px, 9vw, 64px);
-  line-height: 1.22;
-}
-
-.presentation-names span {
-  display: block;
-  color: var(--gold);
-  font-size: .72em;
-  margin: 8px;
-}
-
-.presentation-message {
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-#continueButton {
-  margin-top: 20px;
-}
-
-/* =========================
-   SITE PRINCIPAL
-========================= */
-
-#site {
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-#site.visible {
-  opacity: 1;
-}
-
-.hero {
-  min-height: 100svh;
-  padding: 65px 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  color: var(--ivory);
-  background: var(--green);
-}
-
-.hero-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .36;
-  animation: heroZoom 18s ease-in-out infinite alternate;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(150deg, #08251dc9, #123d307a 55%, #4a1024c9);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 760px;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 12px;
-  border: 1px solid var(--gold);
-  pointer-events: none;
-}
-
-.label {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.couple-names {
-  font-size: clamp(37px, 9vw, 66px);
-  line-height: 1.2;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-  margin: 25px 0;
-}
-
-.amp {
-  display: block;
-  color: var(--gold);
-  font-size: .7em;
-  margin: 8px 0;
-}
-
-.hero p {
-  max-width: 540px;
-  margin: 12px auto;
-}
-
-.date {
-  color: var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-section {
-  padding: 62px 20px;
-  text-align: center;
-}
-
-section p {
-  max-width: 680px;
-  margin: 12px auto;
-}
-
-.section-green {
-  background: var(--green);
-  color: var(--ivory);
-}
-
-.section-green h2 {
-  color: var(--gold);
-}
-
-.section-cream {
-  background: var(--cream);
-}
-
-.photo-main {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  max-height: 720px;
-  object-fit: cover;
-  margin: 28px auto;
-  border: 4px solid white;
-  outline: 1px solid var(--gold);
-  box-shadow: 0 15px 35px #0002;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 28px auto;
-}
-
-.time {
-  min-width: 72px;
-  padding: 13px 8px;
-  background: var(--green);
-  color: white;
-  border-bottom: 3px solid var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 11px;
-}
-
-.time strong {
-  display: block;
-  color: var(--gold);
-  font-size: 25px;
-}
-
-.story {
-  max-width: 760px;
-  margin: 0 auto;
-  font-size: 19px;
-}
-
-.gallery {
-  max-width: 900px;
-  margin: 28px auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  background: var(--green);
-  border: 3px solid white;
-  outline: 1px solid var(--gold);
-  box-shadow: 0 10px 30px #0002;
-}
-
-.gallery img {
-  display: block;
-  width: 100%;
-  height: 370px;
-  object-fit: cover;
-  transition: transform .8s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.035);
-}
-
-.gallery-caption {
-  padding: 12px;
-  color: var(--ivory);
-  background: var(--green);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.card {
-  max-width: 600px;
-  padding: 24px 20px;
-  margin: 20px auto;
-  background: white;
-  border: 1px solid var(--gold);
-  box-shadow: 0 7px 22px #0000000a;
-}
-
-.card h3 {
-  color: var(--green);
-  font-size: 20px;
-}
-
-.program-time {
-  display: inline-block;
-  margin-bottom: 8px;
-  padding: 4px 14px;
-  background: var(--green);
-  color: var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.location-name {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 25px;
-  color: var(--wine);
-}
-
-form {
-  max-width: 520px;
-  margin: 25px auto 0;
-  text-align: left;
-}
-
-label {
-  display: block;
-  margin: 15px 0 6px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #88765c;
-  border-radius: 3px;
-  background: white;
-  color: #29221f;
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 17px;
-}
-
-.rsvp-deadline {
-  font-size: 15px;
-  color: var(--gold);
-}
-
-footer {
-  padding: 35px 20px;
-  text-align: center;
-  color: var(--ivory);
-  background: #0b241c;
-}
-
-footer strong {
-  color: var(--gold);
-}
-
-.hashtag {
-  color: var(--gold);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 14px;
-}
-
-.music {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  z-index: 50;
-  border: 1px solid var(--gold);
-  border-radius: 28px;
-  background: var(--wine);
-  color: white;
-  padding: 12px 15px;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px #0003;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .9s ease, transform .9s ease;
-}
-
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes contentRise {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.08); }
-}
-
-@media (min-width: 650px) {
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gallery-item:first-child {
-    grid-column: 1 / -1;
-  }
-
-  .gallery-item:first-child img {
-    height: 480px;
-  }
-}
-
-@media (max-width: 420px) {
-  body { font-size: 18px; }
-  section { padding: 48px 17px; }
-  .gallery img { height: 300px; }
-  .envelope-scene { height: 215px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b30">
+  <meta name="description" content="Invitation au mariage de KODJI ELYSEE et KOUAME EUPHRASIE, le 10 avril 2027.">
+  <title>KODJI ELYSEE & KOUAME EUPHRASIE | Mariage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #123b30;
+      --green-light: #1b5141;
+      --burgundy: #741d32;
+      --gold: #c9a45c;
+      --ivory: #fff9ee;
+      --cream: #f5ead8;
+      --text: #29251f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    body.locked {
+      overflow: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.3;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .eyebrow {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: var(--green);
+      font-size: clamp(29px, 7vw, 42px);
+      margin: 12px 0 20px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .gold-line {
+      width: 75px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      background: var(--burgundy);
+      color: white;
+      padding: 13px 24px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: transform .25s, background .25s;
+    }
+
+    .btn:hover {
+      background: var(--green);
+      transform: translateY(-2px);
+    }
+
+    /* ENVELOPPE D'OUVERTURE */
+
+    #opening {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+      background:
+        radial-gradient(ellipse at top, #28604d, transparent 65%),
+        linear-gradient(145deg, #09271f, var(--green), #071d17);
+      transition: opacity .8s ease, visibility .8s ease;
+      overflow: hidden;
+    }
+
+    .opening-caption {
+      text-align: center;
+      color: var(--ivory);
+      margin-bottom: 35px;
+    }
+
+    .opening-caption .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .opening-caption h1 {
+      font-size: clamp(25px, 7vw, 37px);
+      font-weight: 500;
+    }
+
+    .opening-caption p {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #f5ead8;
+    }
+
+    .envelope-wrap {
+      width: min(86vw, 340px);
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .envelope {
+      position: relative;
+      height: 215px;
+      background: var(--burgundy);
+      border: 1px solid var(--gold);
+      box-shadow: 0 18px 45px #0005;
+      border-radius: 3px;
+      isolation: isolate;
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(145deg, #8d3044, #68182b);
+      clip-path: polygon(0 0, 50% 56%, 100% 0);
+      pointer-events: none;
+    }
+
+    .envelope::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(35deg, #65172a, #8a293d);
+      clip-path: polygon(0 100%, 0 0, 50% 56%, 100% 0, 100% 100%);
+      pointer-events: none;
+    }
+
+    .envelope-flap {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 115px;
+      background: #922f44;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transition: transform .8s ease;
+      backface-visibility: hidden;
+      pointer-events: none;
+    }
+
+    .wax-seal {
+      position: absolute;
+      z-index: 7;
+      left: 50%;
+      top: 53%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px double var(--gold);
+      background: radial-gradient(circle at 35% 30%, #a7354a, #5b1021);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 4px 15px #0005;
+      pointer-events: none;
+    }
+
+    .wax-seal strong {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .wax-seal span {
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    #open-button {
+      display: block;
+      margin: 30px auto 0;
+      width: min(100%, 290px);
+      padding: 15px 16px;
+      color: var(--green);
+      background: var(--gold);
+      border: 1px solid #f5dc9b;
+      border-radius: 3px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 18px #0003;
+      position: relative;
+      z-index: 10;
+    }
+
+    #open-button:disabled {
+      opacity: .8;
+    }
+
+    .open-hint {
+      color: var(--ivory);
+      font-size: 12px;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    #opening.opening-now .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    #opening.opening-now .wax-seal {
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    #opening.card-leaving .envelope-wrap {
+      animation: envelopeExit 1s forwards;
+    }
+
+    #opening.finished {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @keyframes envelopeExit {
+      to {
+        transform: translateY(-120vh) scale(.8);
+        opacity: 0;
+      }
+    }
+
+    /* PRÉSENTATION DES MARIÉS */
+
+    #presentation {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--ivory);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .8s ease, visibility .8s ease;
+      overflow: auto;
+    }
+
+    #presentation.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .presentation-content {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      padding: 22px;
+      border: 1px solid var(--gold);
+      background: white;
+      box-shadow: 0 15px 45px #123b3018;
+    }
+
+    .presentation-photo {
+      display: block;
+      width: 100%;
+      max-height: 43vh;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto 20px;
+    }
+
+    .presentation-content h2 {
+      color: var(--green);
+      font-size: clamp(25px, 6vw, 36px);
+    }
+
+    .presentation-content .ampersand {
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    .presentation-content p {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 15px;
+    }
+
+    /* PAGE PRINCIPALE */
+
+    #site {
+      display: none;
+    }
+
+    #site.visible {
+      display: block;
+      animation: siteAppear 1s ease both;
+    }
+
+    @keyframes siteAppear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      background:
+        linear-gradient(#09271fa8, #09271f9c),
+        url("photos/photo_1.png") center 40% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      width: 100%;
+      padding: 35px 20px;
+      border: 1px solid #c9a45c99;
+      background: #09271f38;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 8vw, 65px);
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    .hero .ampersand {
+      display: block;
+      color: var(--gold);
+      font-size: 32px;
+      margin: 2px 0;
+    }
+
+    .hero-date {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 24px 0;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .countdown-item {
+      min-width: 67px;
+      padding: 12px 8px;
+      background: #fff9ee15;
+      border: 1px solid #c9a45c88;
+    }
+
+    .countdown-item strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      color: var(--gold);
+    }
+
+    .countdown-item span {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .story {
+      background: white;
+    }
+
+    .story-text {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    .gallery {
+      background: var(--cream);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 950px;
+      margin: 35px auto 0;
+    }
+
+    .gallery-card {
+      background: white;
+      padding: 10px 10px 18px;
+      border: 1px solid #c9a45c80;
+      box-shadow: 0 8px 22px #123b3010;
+    }
+
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      background: #eee5d7;
+    }
+
+    .gallery-card h3 {
+      color: var(--green);
+      margin-top: 15px;
+      font-size: 24px;
+    }
+
+    .program {
+      background: var(--green);
+      color: var(--ivory);
+    }
+
+    .program h2 {
+      color: var(--ivory);
+    }
+
+    .program .section-intro {
+      color: #f5ead8;
+    }
+
+    .timeline {
+      max-width: 650px;
+      margin: 35px auto 0;
+      text-align: left;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 85px 1fr;
+      gap: 18px;
+      padding: 17px 0;
+      border-bottom: 1px solid #c9a45c55;
+    }
+
+    .timeline-item time {
+      color: var(--gold);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .timeline-item h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      color: white;
+    }
+
+    .venue-card {
+      max-width: 620px;
+      margin: 30px auto 0;
+      padding: 30px 20px;
+      border: 1px solid var(--gold);
+      background: white;
+    }
+
+    .venue-card h3 {
+      color: var(--burgundy);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .attire {
+      background: var(--cream);
+    }
+
+    .attire-symbol {
+      color: var(--gold);
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .rsvp {
+      background: white;
+    }
+
+    .rsvp-form {
+      max-width: 560px;
+      margin: 30px auto 0;
+      text-align: left;
+    }
+
+    .rsvp-form label {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 18px 0 6px;
+    }
+
+    .rsvp-form input,
+    .rsvp-form select,
+    .rsvp-form textarea {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d7cbb8;
+      border-radius: 3px;
+      background: var(--ivory);
+      color: var(--text);
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .rsvp-form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .rsvp-form .btn {
+      margin-top: 22px;
+      width: 100%;
+    }
+
+    .music-control {
+      position: fixed;
+      z-index: 100;
+      right: 14px;
+      bottom: 14px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      padding: 11px 15px;
+      background: var(--green);
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      box-shadow: 0 4px 15px #0002;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #09271f;
+      color: var(--ivory);
+    }
+
+    footer .names {
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin: 8px 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.shown {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 650px) {
+      .section {
+        padding: 95px 30px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .gallery-card img {
+        height: 330px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="locked">
 
-<!-- ÉCRAN D'OUVERTURE -->
-<div id="opening">
-  <div class="opening-label">Une union bénie · Une promesse éternelle</div>
+  <!-- ENVELOPPE -->
+  <section id="opening" aria-label="Ouvrir l'invitation">
+    <div class="opening-caption">
+      <div class="eyebrow">Une invitation précieuse</div>
+      <h1>Vous êtes cordialement invités</h1>
+      <p>À célébrer notre amour et notre union</p>
+    </div>
 
-  <h1 class="opening-title">Une invitation<br>du cœur</h1>
+    <div class="envelope-wrap">
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="wax-seal">
+          <strong>K & E</strong>
+          <span>AMOUR</span>
+        </div>
+      </div>
+    </div>
 
-  <p class="opening-description">
-    Nous avons la joie de vous inviter à célébrer avec nous
-    le début d'un magnifique chapitre.
-  </p>
+    <button id="open-button" type="button">
+      Ouvrir notre invitation
+    </button>
+    <p class="open-hint">Appuyez sur le bouton pour découvrir notre invitation</p>
+  </section>
 
-  <div class="envelope-scene" aria-label="Enveloppe d'invitation">
-    <div class="envelope">
-      <div class="envelope-back"></div>
+  <!-- PRÉSENTATION -->
+  <section id="presentation" aria-label="Présentation des mariés">
+    <div class="presentation-content">
+      <img class="presentation-photo" src="photos/photo_1.png" alt="Photo des futurs mariés">
+      <div class="eyebrow">Le début d'une belle histoire</div>
+      <h2>KODJI ELYSEE</h2>
+      <div class="ampersand">&</div>
+      <h2>KOUAME EUPHRASIE</h2>
+      <div class="gold-line"></div>
+      <p>Samedi 10 avril 2027</p>
+    </div>
+  </section>
 
-      <div class="invitation-card">
-        <strong>Vous êtes invités</strong>
-        <span>À partager notre bonheur ♥</span>
-        <span>10 avril 2027</span>
+  <!-- SITE PRINCIPAL -->
+  <main id="site">
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Le bonheur se partage</div>
+        <h1>
+          KODJI ELYSEE
+          <span class="ampersand">&</span>
+          KOUAME EUPHRASIE
+        </h1>
+        <div class="gold-line"></div>
+        <p>Avec la grâce de Dieu et entourés de ceux que nous aimons,</p>
+        <p>nous avons la joie de vous inviter à notre mariage.</p>
+        <div class="hero-date">SAMEDI 10 AVRIL 2027</div>
+
+        <div class="countdown" aria-label="Compte à rebours">
+          <div class="countdown-item"><strong id="days">--</strong><span>Jours</span></div>
+          <div class="countdown-item"><strong id="hours">--</strong><span>Heures</span></div>
+          <div class="countdown-item"><strong id="minutes">--</strong><span>Minutes</span></div>
+          <div class="countdown-item"><strong id="seconds">--</strong><span>Secondes</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section story">
+      <div class="reveal">
+        <div class="eyebrow">Notre histoire</div>
+        <h2>Une histoire écrite par l'amour</h2>
+        <div class="gold-line"></div>
+        <p class="story-text">
+          Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
+          les taquineries de nos proches me surnommant « la femme de Respo »
+          annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
+          l’amour et la grâce de Dieu, nous sommes heureux de vous inviter
+          à célébrer le magnifique chapitre qui s’ouvre : notre mariage. 💍🙏
+        </p>
+      </div>
+    </section>
+
+    <section class="section gallery">
+      <div class="reveal">
+        <div class="eyebrow">Quelques souvenirs</div>
+        <h2>Notre galerie</h2>
+        <p class="section-intro">Trois photos, une histoire et un amour à célébrer.</p>
       </div>
 
-      <div class="envelope-front"></div>
-      <div class="envelope-flap"></div>
-      <div class="wax-seal">E ♥ E</div>
-    </div>
-  </div>
+      <!-- EXACTEMENT TROIS PHOTOS DANS LA GALERIE -->
+      <div class="gallery-grid">
+        <article class="gallery-card reveal">
+          <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
+          <h3>Nous deux</h3>
+        </article>
 
-  <button class="button opening-button" id="openInvitation" type="button">
-    Ouvrir notre invitation ♥
-  </button>
+        <article class="gallery-card reveal">
+          <img src="photos/photo_2.png" alt="Photo du marié" loading="lazy">
+          <h3>Le marié</h3>
+        </article>
 
-  <div id="openingMessage" aria-live="polite">
-    Une belle histoire s'apprête à s'ouvrir…
-  </div>
-</div>
+        <article class="gallery-card reveal">
+          <img src="photos/photo-5.png" alt="Photo de la mariée" loading="lazy">
+          <h3>La mariée</h3>
+        </article>
+      </div>
+    </section>
 
-<!-- PRÉSENTATION AUTOMATIQUE -->
-<div id="presentation" aria-live="polite">
-  <img class="presentation-photo"
-       src="photos/photo_1.png"
-       alt="Portrait des futurs mariés">
+    <section class="section program">
+      <div class="reveal">
+        <div class="eyebrow">Réservez cette journée</div>
+        <h2>Le programme du mariage</h2>
+        <p class="section-intro">
+          Nous serons heureux de partager ces précieux moments avec vous.
+        </p>
+      </div>
 
-  <div class="presentation-overlay"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <time>09 h 30</time>
+          <div><h3>Accueil des invités</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>11 h 30</time>
+          <div><h3>Début de la cérémonie</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>12 h 30</time>
+          <div><h3>Bénédiction nuptiale</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>13 h 30</time>
+          <div><h3>Déjeuner</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>14 h 30</time>
+          <div><h3>Prestation de ballet et surprise</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>16 h 00</time>
+          <div><h3>Remise de présents au couple</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>17 h 00</time>
+          <div><h3>Coupure du gâteau</h3></div>
+        </div>
+        <div class="timeline-item">
+          <time>18 h 00</time>
+          <div><h3>Fin de la cérémonie</h3></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="presentation-content">
-    <div class="presentation-small" id="presentationLabel">
-      Le bonheur de vous inviter
-    </div>
+    <section class="section">
+      <div class="reveal">
+        <div class="eyebrow">Le lieu de notre union</div>
+        <h2>Retrouvons-nous</h2>
+        <div class="venue-card">
+          <h3>The Rezy Event &amp; Lounge</h3>
+          <p>Rue H26, Abidjan, Côte d’Ivoire</p>
+          <div class="gold-line"></div>
+          <p>Samedi 10 avril 2027</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">
+            Voir l'itinéraire
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <h2 class="presentation-names" id="presentationNames">
-      KODJI ELYSEE
-      <span>&</span>
-      KOUAME EUPHRASIE
-    </h2>
+    <section class="section attire">
+      <div class="reveal">
+        <div class="attire-symbol">✧</div>
+        <div class="eyebrow">Pour cette belle journée</div>
+        <h2>Tenue de fête</h2>
+        <p>Nous vous invitons à porter une tenue élégante et festive.</p>
+      </div>
+    </section>
 
-    <p class="presentation-message" id="presentationMessage">
-      Avec la grâce de Dieu, nous serions heureux de partager
-      avec vous cette journée inoubliable.
-    </p>
+    <section class="section rsvp">
+      <div class="reveal">
+        <div class="eyebrow">Votre présence nous honore</div>
+        <h2>Confirmez votre présence</h2>
+        <p class="section-intro">
+          Merci de nous faire savoir si vous serez parmi nous pour cette journée inoubliable.
+        </p>
+      </div>
 
-    <div class="date">SAMEDI 10 AVRIL 2027</div>
+      <form class="rsvp-form" action="https://formspree.io/f/mnppjjjj" method="POST">
+        <label for="guest-name">Votre nom complet</label>
+        <input id="guest-name" type="text" name="nom" autocomplete="name" required>
 
-    <button class="button" id="continueButton" type="button">
-      Découvrir notre mariage ↓
+        <label for="attendance">Serez-vous présent(e) ?</label>
+        <select id="attendance" name="presence" required>
+          <option value="">Choisissez une réponse</option>
+          <option value="Oui, je serai présent(e)">Oui, je serai présent(e)</option>
+          <option value="Désolé(e), je ne pourrai pas venir">Désolé(e), je ne pourrai pas venir</option>
+        </select>
+
+        <label for="guests">Nombre de personnes (vous compris)</label>
+        <select id="guests" name="nombre_de_personnes" required>
+          <option value="1">1 personne</option>
+          <option value="2">2 personnes</option>
+          <option value="3">3 personnes</option>
+          <option value="4">4 personnes</option>
+          <option value="5">5 personnes</option>
+        </select>
+
+        <label for="message">Un petit mot pour les mariés (facultatif)</label>
+        <textarea id="message" name="message" placeholder="Votre message..."></textarea>
+
+        <button class="btn" type="submit">Envoyer ma réponse</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="eyebrow">Unis par l'amour et la grâce de Dieu</div>
+      <p class="names">KODJI ELYSEE &amp; KOUAME EUPHRASIE</p>
+      <p>10 avril 2027</p>
+      <div class="gold-line"></div>
+      <p>Merci de faire partie de notre histoire. ❤️</p>
+    </footer>
+
+    <audio id="wedding-music" src="je-suis-mariee.mp3" loop preload="none"></audio>
+    <button id="music-button" class="music-control" type="button" hidden>
+      ♫ Activer la musique
     </button>
-  </div>
-</div>
 
-<!-- SITE PRINCIPAL -->
-<div id="site">
+  </main>
 
-<header class="hero">
-  <img class="hero-photo"
-       src="photos/photo_1.png"
-       alt=""
-       fetchpriority="high">
+  <script>
+    (() => {
+      "use strict";
 
-  <div class="hero-overlay"></div>
+      const opening = document.getElementById("opening");
+      const openButton = document.getElementById("open-button");
+      const presentation = document.getElementById("presentation");
+      const site = document.getElementById("site");
+      const music = document.getElementById("wedding-music");
+      const musicButton = document.getElementById("music-button");
 
-  <div class="hero-content">
-    <div class="label">Une union bénie · Une promesse éternelle</div>
+      let invitationStarted = false;
+      let musicStarted = false;
 
-    <p>Avec la grâce de Dieu, nous avons la joie de vous inviter à célébrer notre mariage.</p>
+      function showMainSite() {
+        presentation.classList.remove("visible");
+        opening.classList.add("finished");
+        site.classList.add("visible");
+        document.body.classList.remove("locked");
+        musicButton.hidden = false;
 
-    <h1 class="couple-names">
-      KODJI ELYSEE
-      <span class="amp">&</span>
-      KOUAME EUPHRASIE
-    </h1>
+        setTimeout(() => {
+          opening.style.display = "none";
+          presentation.style.display = "none";
+        }, 900);
 
-    <div class="date">SAMEDI 10 AVRIL 2027</div>
+        startReveals();
+      }
 
-    <p>Deux cœurs, une destinée, un amour béni par Dieu.</p>
+      function startInvitation() {
+        if (invitationStarted) return;
+        invitationStarted = true;
 
-    <a class="button" href="#histoire">Découvrir notre histoire ↓</a>
-  </div>
-</header>
+        openButton.disabled = true;
+        openButton.textContent = "Votre invitation s'ouvre…";
+        opening.classList.add("opening-now");
 
-<main>
+        // L'enveloppe s'ouvre, puis s'efface.
+        window.setTimeout(() => {
+          opening.classList.add("card-leaving");
+        }, 900);
 
-<section class="reveal">
-  <div class="label" style="color:#701d32">Deux cœurs · Une destinée</div>
-  <h2>Notre bonheur</h2>
+        // La présentation des mariés apparaît ensuite.
+        window.setTimeout(() => {
+          opening.classList.add("finished");
+          presentation.classList.add("visible");
+        }, 1600);
 
-  <p>Nous serions honorés de vous avoir à nos côtés pour célébrer ce jour précieux et partager avec vous le début de notre vie à deux.</p>
+        // La page principale s'affiche automatiquement.
+        window.setTimeout(() => {
+          showMainSite();
+        }, 5500);
+      }
 
-  <img class="photo-main"
-       src="photos/photo_1.png"
-       alt="Photo du couple"
-       loading="lazy">
-</section>
+      // Gestion du clic principal.
+      openButton.addEventListener("click", startInvitation);
+      openButton.addEventListener("touchend", function(event) {
+        event.preventDefault();
+        startInvitation();
+      }, { passive: false });
 
-<section class="section-cream reveal">
-  <div class="label" style="color:#701d32">Le grand jour approche</div>
-  <h2>Compte à rebours</h2>
+      // Permet aussi d'ouvrir en touchant l'enveloppe.
+      opening.addEventListener("click", function(event) {
+        if (event.target.closest("#open-button")) return;
+        startInvitation();
+      });
 
-  <div class="countdown">
-    <div class="time"><strong id="days">—</strong>JOURS</div>
-    <div class="time"><strong id="hours">—</strong>HEURES</div>
-    <div class="time"><strong id="minutes">—</strong>MINUTES</div>
-    <div class="time"><strong id="seconds">—</strong>SECONDES</div>
-  </div>
+      // Compte à rebours : 10 avril 2027 à 09 h 30, heure d'Abidjan.
+      function updateCountdown() {
+        const weddingDate = new Date("2027-04-10T09:30:00+00:00");
+        const now = new Date();
+        const difference = weddingDate.getTime() - now.getTime();
+        const safeDifference = Math.max(0, difference);
 
-  <p>Samedi 10 avril 2027</p>
-</section>
+        document.getElementById("days").textContent =
+          Math.floor(safeDifference / 86400000);
+        document.getElementById("hours").textContent =
+          Math.floor((safeDifference % 86400000) / 3600000);
+        document.getElementById("minutes").textContent =
+          Math.floor((safeDifference % 3600000) / 60000);
+        document.getElementById("seconds").textContent =
+          Math.floor((safeDifference % 60000) / 1000);
+      }
 
-<section class="reveal" id="histoire">
-  <div class="label" style="color:#701d32">Notre chemin vers le bonheur</div>
-  <h2>Notre histoire</h2>
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
 
-  <p class="story">
-    Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
-    les taquineries de nos proches me surnommant « la femme de Respo »
-    annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
-    l’amour et la grâce de Dieu, nous sommes heureux de vous inviter à
-    célébrer le magnifique chapitre qui s’ouvre : notre mariage. 💍🙏
-  </p>
-</section>
+      // Musique : la lecture démarre après une action volontaire.
+      musicButton.addEventListener("click", async () => {
+        if (!musicStarted || music.paused) {
+          try {
+            await music.play();
+            musicStarted = true;
+            musicButton.textContent = "♫ Mettre la musique en pause";
+          } catch (error) {
+            musicButton.textContent = "Musique indisponible";
+          }
+        } else {
+          music.pause();
+          musicButton.textContent = "♫ Reprendre la musique";
+        }
+      });
 
-<section class="section-cream reveal">
-  <div class="label" style="color:#701d32">Trois portraits · Une histoire d'amour</div>
-  <h2>Notre galerie</h2>
+      // Apparition progressive des sections.
+      function startReveals() {
+        const elements = document.querySelectorAll(".reveal");
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="photos/photo_1.png"
-           alt="Les futurs mariés ensemble"
-           loading="lazy">
-      <div class="gallery-caption">LE COUPLE</div>
-    </div>
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("shown");
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
 
-    <div class="gallery-item">
-      <img src="photos/photo_2.png"
-           alt="Portrait du futur marié"
-           loading="lazy">
-      <div class="gallery-caption">LE MARIÉ</div>
-    </div>
-
-    <div class="gallery-item">
-      <img src="photos/photo-3.png"
-           alt="Portrait de la future mariée"
-           loading="lazy">
-      <div class="gallery-caption">LA MARIÉE</div>
-    </div>
-  </div>
-
-  <p>Trois portraits, mille émotions et une promesse pour la vie.</p>
-</section>
-
-<section class="reveal">
-  <div class="label" style="color:#701d32">Un jour · Des instants précieux</div>
-  <h2>Le programme</h2>
-
-  <div class="card">
-    <span class="program-time">09 h 30</span>
-    <h3>Accueil des invités</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">11 h 30</span>
-    <h3>Début de la cérémonie</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">12 h 30</span>
-    <h3>Bénédiction nuptiale</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">13 h 30</span>
-    <h3>Déjeuner</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">14 h 30</span>
-    <h3>Prestation de ballet et surprise</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">16 h 00</span>
-    <h3>Remise de présents au couple</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">17 h 00</span>
-    <h3>Découpe du gâteau</h3>
-  </div>
-
-  <div class="card">
-    <span class="program-time">18 h 00</span>
-    <h3>Fin de la cérémonie</h3>
-  </div>
-</section>
-
-<section class="section-cream reveal" id="lieu">
-  <div class="label" style="color:#701d32">Le rendez-vous de notre bonheur</div>
-  <h2>Le lieu du mariage</h2>
-
-  <p class="location-name">The Rezy Event &amp; Lounge</p>
-  <p>Rue H26, Abidjan, Côte d'Ivoire</p>
-
-  <a class="button"
-     href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan"
-     target="_blank"
-     rel="noopener">
-    Voir l'itinéraire
-  </a>
-</section>
-
-<section class="reveal">
-  <div class="label" style="color:#701d32">Pour célébrer avec élégance</div>
-  <h2>Tenue de fête</h2>
-  <p>Nous vous invitons à porter une tenue de fête pour partager avec nous cette journée exceptionnelle.</p>
-</section>
-
-<section class="section-green reveal" id="rsvp">
-  <div class="label">Votre présence est un cadeau</div>
-  <h2>Confirmez votre présence</h2>
-
-  <p>Merci de nous faire savoir si vous serez parmi nous pour cette belle célébration.</p>
-
-  <p class="rsvp-deadline">
-    Merci de confirmer votre présence avant la dat
+          elements.forEach((element) => observer.observe(element));
+        } else {
+          elements.forEach((element) => element.classList.add("shown"));
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
