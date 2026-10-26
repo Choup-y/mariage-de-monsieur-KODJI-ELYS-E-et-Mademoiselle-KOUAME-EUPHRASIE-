@@ -858,7 +858,7 @@
 
         <div class="program-list">
           <div class="program-item">
-            <div class="program-time">09h30</div>
+            <div class="program-time">10h30</div>
             <div>
               <h3>Accueil des invités</h3>
               <p>Installation et retrouvailles dans la joie.</p>
@@ -1065,7 +1065,14 @@
       envelope.classList.add('opened');
       openInvitation.disabled = true;
       openInvitationText.disabled = true;
-
+music.play().then(() => {
+  musicButton.classList.add('playing');
+  musicButton.setAttribute('aria-label', 'Couper la musique');
+  musicButton.textContent = '♫';
+}).catch((error) => {
+  console.log('La lecture automatique a été bloquée par le navigateur.', error);
+});
+      
       window.setTimeout(() => {
         opening.classList.add('hidden');
         presentation.classList.add('visible');
