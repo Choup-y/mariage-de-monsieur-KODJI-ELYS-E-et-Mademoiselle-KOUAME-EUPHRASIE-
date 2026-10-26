@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123b30">
-  <meta name="description" content="Invitation au mariage de KODJI ELYSEE et KOUAME EUPHRASIE, le 10 avril 2027.">
+  <meta name="description" content="Invitation au mariage de KODJI ELYSEE et KOUAME EUPHRASIE, le 10 avril 2027 à Abidjan.">
   <title>KODJI ELYSEE & KOUAME EUPHRASIE | Mariage</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,602 +18,617 @@
       --green-light: #1b5141;
       --burgundy: #741d32;
       --gold: #c9a45c;
+      --gold-light: #ead8a5;
       --ivory: #fff9ee;
       --cream: #f5ead8;
-      --text: #29251f;
+      --ink: #24312b;
+      --muted: #68716a;
+      --shadow: 0 18px 55px rgba(18,59,48,.15);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Lato", sans-serif;
+      margin: 0;
+      color: var(--ink);
       background: var(--ivory);
-      color: var(--text);
-      line-height: 1.8;
-      font-size: 17px;
+      font-family: "Lato", sans-serif;
+      line-height: 1.7;
     }
 
     body.locked { overflow: hidden; }
 
-    h1, h2, h3 {
-      font-family: "Playfair Display", serif;
-      line-height: 1.3;
-    }
-
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { font: inherit; cursor: pointer; }
+    button, input, select, textarea { font: inherit; }
+    img { display: block; max-width: 100%; }
     a { color: inherit; }
 
     .eyebrow {
-      font-family: "Montserrat", sans-serif;
+      font: 700 .72rem "Montserrat", sans-serif;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
       color: var(--gold);
-      font-weight: 600;
     }
 
-    .section {
-      padding: 75px 20px;
+    .section { padding: 76px 20px; }
+    .wrap { width: min(100%, 1020px); margin: 0 auto; }
+
+    .section-heading {
       text-align: center;
+      margin: 0 auto 34px;
     }
 
-    .section h2 {
+    .section-heading h2 {
+      font: 500 clamp(2rem,7vw,3.2rem)/1.15 "Playfair Display",serif;
       color: var(--green);
-      font-size: clamp(29px, 7vw, 42px);
-      margin: 12px 0 20px;
+      margin: 10px 0 12px;
     }
 
-    .section-intro {
-      max-width: 650px;
-      margin: 0 auto 35px;
+    .section-heading p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
     }
 
-    .gold-line {
-      width: 75px;
-      height: 2px;
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--gold);
+      margin: 18px auto;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      width: 52px;
+      height: 1px;
       background: var(--gold);
-      margin: 20px auto;
     }
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid var(--gold);
-      background: var(--burgundy);
-      color: white;
-      padding: 13px 24px;
-      border-radius: 3px;
+      border-radius: 2px;
+      padding: 13px 22px;
+      background: var(--gold);
+      color: var(--green);
       text-decoration: none;
-      font-family: "Montserrat", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: transform .25s, background .25s;
+      text-transform: uppercase;
+      font: 700 .72rem "Montserrat",sans-serif;
+      letter-spacing: .1em;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
     }
 
     .btn:hover {
-      background: var(--green);
       transform: translateY(-2px);
+      background: var(--gold-light);
     }
 
-    /* ENVELOPPE */
+    .btn:disabled { opacity: .6; cursor: wait; }
 
-    #opening {
+    /* ÉCRAN D'OUVERTURE */
+    #envelope-screen {
       position: fixed;
       inset: 0;
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 16px;
-      background:
-        radial-gradient(ellipse at top, #28604d, transparent 65%),
-        linear-gradient(145deg, #09271f, var(--green), #071d17);
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow: auto;
+      background: radial-gradient(ellipse at top,#235343 0%,var(--green) 48%,#09251e 100%);
       transition: opacity .8s ease, visibility .8s ease;
-      overflow: hidden;
     }
 
-    .opening-caption {
+    #envelope-screen::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(201,164,92,.55);
+      pointer-events: none;
+    }
+
+    #envelope-screen.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro {
+      width: min(100%,520px);
       text-align: center;
       color: var(--ivory);
-      margin-bottom: 35px;
-    }
-
-    .opening-caption .eyebrow { margin-bottom: 12px; }
-
-    .opening-caption h1 {
-      font-size: clamp(25px, 7vw, 37px);
-      font-weight: 500;
-    }
-
-    .opening-caption p {
-      font-size: 14px;
-      margin-top: 10px;
-      color: var(--cream);
-    }
-
-    .envelope-wrap {
-      width: min(86vw, 340px);
       position: relative;
-      perspective: 1000px;
+      z-index: 1;
+      padding: 26px 10px;
+    }
+
+    .intro .eyebrow { color: var(--gold-light); }
+
+    .intro h1 {
+      font: 400 clamp(2.2rem,9vw,4rem)/1.08 "Great Vibes",cursive;
+      margin: 13px 0 4px;
+      color: var(--gold-light);
+    }
+
+    .intro .date {
+      font: 500 .78rem "Montserrat",sans-serif;
+      letter-spacing: .2em;
+      margin: 16px 0 28px;
     }
 
     .envelope {
+      width: min(86vw,360px);
+      height: 220px;
       position: relative;
-      height: 215px;
-      background: var(--burgundy);
-      border: 1px solid var(--gold);
-      box-shadow: 0 18px 45px #0005;
+      margin: 0 auto 28px;
+      perspective: 1000px;
+      filter: drop-shadow(0 18px 20px rgba(0,0,0,.25));
+    }
+
+    .env-back {
+      position: absolute;
+      inset: 0;
+      background: #f5ead8;
       border-radius: 3px;
-      isolation: isolate;
     }
 
-    .envelope::before {
-      content: "";
+    .env-front {
       position: absolute;
       inset: 0;
-      z-index: 2;
-      background: linear-gradient(145deg, #8d3044, #68182b);
-      clip-path: polygon(0 0, 50% 56%, 100% 0);
-      pointer-events: none;
+      background: linear-gradient(145deg,#e7d5b6,#fff5df);
+      clip-path: polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);
     }
 
-    .envelope::after {
-      content: "";
+    .env-side {
       position: absolute;
       inset: 0;
-      z-index: 3;
-      background: linear-gradient(35deg, #65172a, #8a293d);
-      clip-path: polygon(0 100%, 0 0, 50% 56%, 100% 0, 100% 100%);
-      pointer-events: none;
+      background: linear-gradient(35deg,#d6bc8c,#f6e7c9);
+      clip-path: polygon(0 0,50% 57%,0 100%);
     }
 
-    .envelope-flap {
+    .env-side.right {
+      background: linear-gradient(145deg,#f7e9cb,#d8bf91);
+      clip-path: polygon(100% 0,50% 57%,100% 100%);
+    }
+
+    .env-flap {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 62%;
+      transform-origin: top center;
+      background: linear-gradient(150deg,#fff3d9,#ddc494);
+      clip-path: polygon(0 0,100% 0,50% 100%);
+      z-index: 4;
+      transition: transform .9s ease;
+      backface-visibility: hidden;
+    }
+
+    .seal {
       position: absolute;
       z-index: 5;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 115px;
-      background: #922f44;
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-      transform-origin: top center;
-      transition: transform .8s ease;
-      backface-visibility: hidden;
-      pointer-events: none;
-    }
-
-    .wax-seal {
-      position: absolute;
-      z-index: 7;
       left: 50%;
-      top: 53%;
-      transform: translate(-50%, -50%);
-      width: 72px;
-      height: 72px;
+      top: 54%;
+      transform: translate(-50%,-50%);
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      border: 3px double var(--gold);
-      background: radial-gradient(circle at 35% 30%, #a7354a, #5b1021);
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      box-shadow: 0 4px 15px #0005;
+      border: 2px solid #d8b96c;
+      background: radial-gradient(circle at 32% 25%,#a63a4d,var(--burgundy) 60%,#4e1020);
+      color: #f3d98f;
+      box-shadow: 0 3px 8px #6b4a27,inset 0 0 0 3px rgba(234,216,165,.25);
+      display: grid;
+      place-items: center;
+      font: 500 1.2rem "Playfair Display",serif;
+      cursor: pointer;
+      transition: transform .25s,opacity .4s;
+    }
+
+    .seal:hover { transform: translate(-50%,-50%) scale(1.06); }
+
+    .envelope.opening .env-flap { transform: rotateX(180deg); }
+
+    .envelope.opening .seal {
+      opacity: 0;
       pointer-events: none;
-      transition: opacity .3s;
+      transform: translate(-50%,-50%) scale(.7);
     }
 
-    .wax-seal strong {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      line-height: 1.2;
+    .envelope.opening {
+      animation: envelope-rise 1.25s .4s forwards;
     }
 
-    .wax-seal span {
-      font-size: 9px;
-      letter-spacing: 2px;
+    @keyframes envelope-rise {
+      to { opacity: 0; transform: translateY(22px) scale(.92); }
     }
 
-    #open-button {
-      display: block;
-      margin: 30px auto 0;
-      width: min(100%, 290px);
-      padding: 15px 16px;
-      color: var(--green);
-      background: var(--gold);
-      border: 1px solid #f5dc9b;
-      border-radius: 3px;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1px;
-      box-shadow: 0 6px 18px #0003;
-      position: relative;
-      z-index: 10;
+    .intro-note {
+      font-size: .93rem;
+      color: rgba(255,249,238,.82);
+      margin: 0 0 17px;
     }
 
-    #open-button:disabled { opacity: .8; }
+    #open-button { min-width: 230px; }
 
-    .open-hint {
-      color: var(--ivory);
-      font-size: 12px;
-      margin-top: 14px;
-      text-align: center;
+    .intro-small {
+      margin-top: 20px;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,249,238,.65);
     }
 
-    #opening.opening-now .envelope-flap {
-      transform: rotateX(180deg);
-    }
-
-    #opening.opening-now .wax-seal { opacity: 0; }
-
-    #opening.card-leaving .envelope-wrap {
-      animation: envelopeExit 1s forwards;
-    }
-
-    #opening.finished {
+    /* CONTENU PRINCIPAL */
+    #main-site {
       opacity: 0;
       visibility: hidden;
-      pointer-events: none;
+      transition: opacity .8s ease;
     }
 
-    @keyframes envelopeExit {
-      to {
-        transform: translateY(-120vh) scale(.8);
-        opacity: 0;
-      }
-    }
-
-    /* PRÉSENTATION */
-
-    #presentation {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: var(--ivory);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .8s ease, visibility .8s ease;
-      overflow: auto;
-    }
-
-    #presentation.visible {
+    #main-site.visible {
       opacity: 1;
       visibility: visible;
     }
 
-    .presentation-content {
-      max-width: 520px;
-      width: 100%;
+    .topbar {
+      background: var(--green);
+      color: var(--ivory);
       text-align: center;
-      padding: 22px;
-      border: 1px solid var(--gold);
-      background: white;
-      box-shadow: 0 15px 45px #123b3018;
-    }
-
-    .presentation-photo {
-      display: block;
-      width: 100%;
-      max-height: 38vh;
-      object-fit: cover;
-      object-position: center;
-      margin: 0 auto 20px;
-    }
-
-    .presentation-content h2 {
-      color: var(--green);
-      font-size: clamp(25px, 6vw, 36px);
-    }
-
-    .presentation-content .ampersand {
-      color: var(--gold);
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-    }
-
-    .presentation-content p {
-      font-family: "Montserrat", sans-serif;
-      font-size: 12px;
-      letter-spacing: 2px;
+      padding: 11px 14px;
+      font: 600 .68rem "Montserrat",sans-serif;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      margin-top: 15px;
-    }
-
-    .presentation-content .btn { margin-top: 18px; }
-
-    /* SITE PRINCIPAL */
-
-    #site { display: none; }
-
-    #site.visible {
-      display: block;
-      animation: siteAppear 1s ease both;
-    }
-
-    @keyframes siteAppear {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     .hero {
-      min-height: 100svh;
+      min-height: 90vh;
+      display: grid;
+      place-items: center;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 70px 20px;
       text-align: center;
-      color: white;
-      padding: 60px 20px;
+      color: var(--ivory);
       background:
-        linear-gradient(#09271fa8, #09271f9c),
-        url("photos/photo_1.png") center 40% / cover no-repeat;
+        linear-gradient(180deg,rgba(7,25,20,.35),rgba(7,25,20,.77)),
+        url("photos/photo_1.png") center 38%/cover no-repeat,
+        var(--green);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(234,216,165,.7);
+      pointer-events: none;
     }
 
     .hero-content {
-      max-width: 750px;
-      width: 100%;
-      padding: 35px 20px;
-      border: 1px solid #c9a45c99;
-      background: #09271f55;
+      position: relative;
+      z-index: 1;
+      width: min(100%,760px);
     }
+
+    .hero .eyebrow { color: var(--gold-light); }
 
     .hero h1 {
-      font-size: clamp(34px, 8vw, 65px);
-      font-weight: 500;
-      margin: 20px 0;
+      margin: 20px 0 10px;
+      font: 400 clamp(3.1rem,12vw,6.6rem)/.95 "Great Vibes",cursive;
+      color: var(--gold-light);
+      text-shadow: 0 3px 18px rgba(0,0,0,.25);
     }
 
-    .hero .ampersand {
+    .ampersand {
+      font: 400 clamp(2rem,7vw,3.2rem) "Playfair Display",serif;
+      color: var(--ivory);
       display: block;
-      color: var(--gold);
-      font-size: 32px;
-      margin: 2px 0;
+      margin: 8px 0;
     }
 
     .hero-date {
-      font-family: "Montserrat", sans-serif;
-      font-size: 14px;
-      letter-spacing: 2px;
-      margin: 24px 0;
+      margin: 28px 0;
+      font: 600 .8rem "Montserrat",sans-serif;
+      letter-spacing: .22em;
     }
 
-    .hero p { font-size: 16px; }
+    .hero-copy {
+      max-width: 530px;
+      margin: 0 auto 26px;
+      font-size: 1.05rem;
+    }
 
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin: 30px auto 0;
     }
 
-    .countdown-item {
+    .count-box {
       min-width: 67px;
-      padding: 12px 8px;
-      background: #fff9ee15;
-      border: 1px solid #c9a45c88;
+      padding: 10px 8px;
+      border: 1px solid rgba(234,216,165,.6);
+      background: rgba(18,59,48,.35);
     }
 
-    .countdown-item strong {
+    .count-box strong {
       display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      color: var(--gold);
+      font: 600 1.5rem "Playfair Display",serif;
+      color: var(--gold-light);
+      line-height: 1.2;
     }
 
-    .countdown-item span {
-      display: block;
-      font-family: "Montserrat", sans-serif;
-      font-size: 10px;
+    .count-box span {
+      font: 500 .58rem "Montserrat",sans-serif;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    .story { background: white; }
+    .story { background: var(--ivory); }
 
-    .story-text {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 18px;
+    .story-card {
+      max-width: 790px;
+      margin: auto;
+      text-align: center;
+      padding: 34px 26px;
+      border: 1px solid #e8d9bd;
+      background: #fffdf7;
+      box-shadow: var(--shadow);
+    }
+
+    .story-card p { margin: 0; font-size: 1.05rem; }
+
+    .couple-names {
+      font: 400 clamp(2.5rem,8vw,4rem)/1.2 "Great Vibes",cursive;
+      color: var(--burgundy);
+      margin: 18px 0;
     }
 
     .gallery { background: var(--cream); }
 
-    .gallery-grid {
+    .photo-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 950px;
-      margin: 35px auto 0;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 14px;
     }
 
-    .gallery-card {
-      background: white;
-      padding: 10px 10px 18px;
-      border: 1px solid #c9a45c80;
-      box-shadow: 0 8px 22px #123b3010;
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      background: #e4d6c0;
+      min-height: 190px;
+      aspect-ratio: 3/4;
+      margin: 0;
+      box-shadow: 0 8px 22px rgba(18,59,48,.12);
     }
 
-    .gallery-card img {
-      display: block;
+    .photo-card img {
       width: 100%;
-      height: 360px;
+      height: 100%;
       object-fit: cover;
-      background: #eee5d7;
+      transition: transform .5s;
     }
 
-    .gallery-card h3 {
-      color: var(--green);
-      margin-top: 15px;
-      font-size: 24px;
+    .photo-card:hover img { transform: scale(1.04); }
+
+    .photo-card figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 26px 8px 12px;
+      color: white;
+      text-align: center;
+      font: 500 .65rem "Montserrat",sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: linear-gradient(transparent,rgba(0,0,0,.6));
     }
 
-    .program {
+    .programme {
       background: var(--green);
       color: var(--ivory);
     }
 
-    .program h2 { color: var(--ivory); }
+    .programme .section-heading h2 { color: var(--ivory); }
 
-    .program .section-intro { color: var(--cream); }
+    .programme .section-heading p {
+      color: rgba(255,249,238,.75);
+    }
 
     .timeline {
-      max-width: 650px;
-      margin: 35px auto 0;
-      text-align: left;
+      max-width: 720px;
+      margin: auto;
+      border-top: 1px solid rgba(201,164,92,.45);
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 85px 1fr;
+      grid-template-columns: 92px 1fr;
       gap: 18px;
-      padding: 17px 0;
-      border-bottom: 1px solid #c9a45c55;
+      padding: 18px 8px;
+      border-bottom: 1px solid rgba(201,164,92,.3);
     }
 
-    .timeline-item time {
-      color: var(--gold);
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 14px;
+    .timeline-time {
+      color: var(--gold-light);
+      font: 600 .83rem "Montserrat",sans-serif;
     }
 
     .timeline-item h3 {
-      font-family: "Montserrat", sans-serif;
-      font-size: 16px;
-      color: white;
+      margin: 0 0 3px;
+      font: 500 1.1rem "Playfair Display",serif;
     }
 
+    .timeline-item p {
+      margin: 0;
+      font-size: .9rem;
+      color: rgba(255,249,238,.72);
+    }
+
+    .venue { background: #fffdf7; }
+
     .venue-card {
-      max-width: 620px;
-      margin: 30px auto 0;
-      padding: 30px 20px;
-      border: 1px solid var(--gold);
-      background: white;
+      max-width: 760px;
+      margin: auto;
+      padding: 36px 22px;
+      text-align: center;
+      border: 1px solid #e6d4b1;
     }
 
     .venue-card h3 {
-      color: var(--burgundy);
-      font-size: 26px;
-      margin-bottom: 12px;
+      margin: 10px 0;
+      font: 500 clamp(1.5rem,5vw,2.2rem) "Playfair Display",serif;
+      color: var(--green);
     }
 
-    .venue-card .btn { margin-top: 20px; }
+    .venue-card p { margin: 7px 0; }
 
-    .attire { background: var(--cream); }
-
-    .attire-symbol {
-      color: var(--gold);
-      font-size: 42px;
-      margin-bottom: 12px;
+    .attire {
+      background: var(--cream);
+      text-align: center;
     }
 
-    .rsvp { background: white; }
+    .attire-swatches {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px auto;
+    }
+
+    .swatch {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,.08);
+      box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    }
+
+    .rsvp { background: var(--ivory); }
 
     .rsvp-form {
-      max-width: 560px;
-      margin: 30px auto 0;
-      text-align: left;
+      max-width: 660px;
+      margin: auto;
+      padding: 28px 22px;
+      background: #fffdf7;
+      border: 1px solid #e8d9bd;
+      box-shadow: var(--shadow);
     }
 
-    .rsvp-form label {
-      display: block;
-      font-family: "Montserrat", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      margin: 18px 0 6px;
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
-    .rsvp-form input,
-    .rsvp-form select,
-    .rsvp-form textarea {
-      display: block;
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font: 700 .7rem "Montserrat",sans-serif;
+      letter-spacing: .07em;
+      color: var(--green);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
       width: 100%;
-      padding: 13px;
-      border: 1px solid #d7cbb8;
-      border-radius: 3px;
-      background: var(--ivory);
-      color: var(--text);
-      font: inherit;
-      font-size: 16px;
+      border: 1px solid #d8c9ad;
+      border-radius: 2px;
+      background: white;
+      padding: 12px;
+      color: var(--ink);
+      min-height: 46px;
     }
 
-    .rsvp-form textarea {
-      min-height: 100px;
-      resize: vertical;
+    .field textarea { min-height: 90px; resize: vertical; }
+
+    .form-note {
+      font-size: .8rem;
+      color: var(--muted);
+      margin: 10px 0 18px;
     }
 
-    .rsvp-form .btn {
-      margin-top: 22px;
-      width: 100%;
+    .form-status {
+      display: none;
+      padding: 12px;
+      margin-top: 14px;
+      background: #edf5ef;
+      border: 1px solid #b6d3bd;
+      color: #174a2b;
     }
+
+    .form-status.show { display: block; }
 
     .music-control {
       position: fixed;
-      z-index: 100;
-      right: 14px;
-      bottom: 14px;
+      z-index: 50;
+      right: 15px;
+      bottom: 15px;
       border: 1px solid var(--gold);
-      border-radius: 30px;
-      padding: 11px 15px;
       background: var(--green);
-      color: white;
-      font-family: "Montserrat", sans-serif;
-      font-size: 12px;
-      box-shadow: 0 4px 15px #0002;
+      color: var(--ivory);
+      border-radius: 50px;
+      padding: 10px 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.2);
+      font: 600 .68rem "Montserrat",sans-serif;
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      padding: 35px 20px;
-      background: #09271f;
+      padding: 38px 20px;
+      background: #09251e;
       color: var(--ivory);
     }
 
-    footer .names {
-      color: var(--gold);
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-      margin: 8px 0;
+    footer .script {
+      font: 400 2.5rem "Great Vibes",cursive;
+      color: var(--gold-light);
+    }
+
+    footer p {
+      margin: 6px 0;
+      font-size: .8rem;
+      color: rgba(255,249,238,.7);
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .7s ease, transform .7s ease;
+      transform: translateY(18px);
+      transition: opacity .7s ease,transform .7s ease;
     }
 
-    .reveal.shown {
-      opacity: 1;
-      transform: translateY(0);
+    .reveal.in-view { opacity: 1; transform: none; }
+
+    @media (max-width:600px) {
+      .section { padding: 58px 17px; }
+      .hero { min-height: 86vh; background-position: center center; }
+      .photo-grid { gap: 8px; }
+      .photo-card { min-height: 150px; }
+      .photo-card figcaption { font-size: .53rem; letter-spacing: .06em; }
+      .timeline-item { grid-template-columns: 76px 1fr; gap: 12px; padding: 16px 2px; }
+      .form-grid { grid-template-columns: 1fr; gap: 0; }
+      .field.full { grid-column: auto; }
+      .rsvp-form { padding: 22px 16px; }
+      .envelope { height: 190px; }
+      .seal { width: 62px; height: 62px; }
     }
 
-    @media (min-width: 650px) {
-      .section { padding: 95px 30px; }
-
-      .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        align-items: start;
-      }
-
-      .gallery-card img { height: 330px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after {
         scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
@@ -623,157 +639,354 @@
 
 <body class="locked">
 
-  <!-- MUSIQUE : fichier MP3 à la racine du dépôt GitHub -->
-  <audio id="wedding-music" loop preload="auto">
-    <source src="Dieu%20a%20fait.mp3" type="audio/mpeg">
-  </audio>
+  <section id="envelope-screen" aria-label="Ouvrir l'invitation de mariage">
+    <div class="intro">
+      <div class="eyebrow">Vous êtes chaleureusement invités</div>
 
-  <!-- ENVELOPPE -->
-  <section id="opening" aria-label="Ouvrir l'invitation">
-    <div class="opening-caption">
-      <div class="eyebrow">Une invitation précieuse</div>
-      <h1>Vous êtes cordialement invités</h1>
-      <p>À célébrer notre amour et notre union</p>
-    </div>
+      <h1>
+        KODJI ELYSEE<br>
+        <span style="font-family:'Playfair Display',serif;font-size:.55em">&amp;</span><br>
+        KOUAME EUPHRASIE
+      </h1>
 
-    <div class="envelope-wrap">
-      <div class="envelope">
-        <div class="envelope-flap"></div>
-        <div class="wax-seal">
-          <strong>E &amp; E</strong>
-          <span>AMOUR</span>
-        </div>
+      <div class="date">SAMEDI 10 AVRIL 2027</div>
+
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-side"></div>
+        <div class="env-side right"></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <button class="seal" id="seal-button" type="button" aria-label="Ouvrir le sceau">E &amp; E</button>
       </div>
-    </div>
 
-    <button id="open-button" type="button">Ouvrir notre invitation</button>
-    <p class="open-hint">Appuyez pour découvrir notre invitation et écouter notre musique</p>
-  </section>
-
-  <!-- PRÉSENTATION DES MARIÉS -->
-  <section id="presentation" aria-label="Présentation des mariés">
-    <div class="presentation-content">
-      <img class="presentation-photo" src="photos/photo_1.png" alt="Photo des futurs mariés">
-      <div class="eyebrow">Le début d'une belle histoire</div>
-      <h2>KODJI ELYSEE</h2>
-      <div class="ampersand">&amp;</div>
-      <h2>KOUAME EUPHRASIE</h2>
-      <div class="gold-line"></div>
-      <p>Samedi 10 avril 2027</p>
-      <button id="continue-button" class="btn" type="button">Découvrir notre invitation</button>
+      <p class="intro-note">Avec joie et gratitude, nous vous invitons à partager notre bonheur.</p>
+      <button class="btn" id="open-button" type="button">Ouvrir notre invitation</button>
+      <div class="intro-small">Une promesse · Un amour · Une vie</div>
     </div>
   </section>
 
-  <!-- SITE PRINCIPAL -->
-  <main id="site">
+  <main id="main-site" aria-hidden="true">
+    <div class="topbar">Une journée d'amour, de grâce et de célébration</div>
 
     <header class="hero">
       <div class="hero-content">
-        <div class="eyebrow">Le bonheur se partage</div>
+        <div class="eyebrow">Invitation à notre mariage</div>
         <h1>KODJI ELYSEE <span class="ampersand">&amp;</span> KOUAME EUPHRASIE</h1>
-        <div class="gold-line"></div>
-        <p>Avec la grâce de Dieu et entourés de ceux que nous aimons,</p>
-        <p>nous avons la joie de vous inviter à notre mariage.</p>
-        <div class="hero-date">SAMEDI 10 AVRIL 2027</div>
+        <div class="ornament">✦</div>
+        <p class="hero-copy">Guidés par l'amour et la grâce de Dieu, nous serions honorés de votre présence pour célébrer notre union.</p>
+        <div class="hero-date">SAMEDI 10 AVRIL 2027 · ABIDJAN</div>
+        <a class="btn" href="#rsvp">Confirmer ma présence</a>
 
         <div class="countdown" aria-label="Compte à rebours">
-          <div class="countdown-item"><strong id="days">--</strong><span>Jours</span></div>
-          <div class="countdown-item"><strong id="hours">--</strong><span>Heures</span></div>
-          <div class="countdown-item"><strong id="minutes">--</strong><span>Minutes</span></div>
-          <div class="countdown-item"><strong id="seconds">--</strong><span>Secondes</span></div>
+          <div class="count-box"><strong id="days">—</strong><span>Jours</span></div>
+          <div class="count-box"><strong id="hours">—</strong><span>Heures</span></div>
+          <div class="count-box"><strong id="minutes">—</strong><span>Minutes</span></div>
+          <div class="count-box"><strong id="seconds">—</strong><span>Secondes</span></div>
         </div>
       </div>
     </header>
 
     <section class="section story">
-      <div class="reveal">
-        <div class="eyebrow">Notre histoire</div>
-        <h2>Une histoire écrite par l'amour</h2>
-        <div class="gold-line"></div>
-        <p class="story-text">
-          Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte,
-          les taquineries de nos proches me surnommant « la femme de Respo »
-          annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par
-          l’amour et la grâce de Dieu, nous sommes heureux de vous inviter
-          à célébrer le magnifique chapitre qui s’ouvre : notre mariage. 💍🙏
-        </p>
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Notre histoire</div>
+          <h2>Deux cœurs, une promesse</h2>
+          <div class="ornament">❦</div>
+        </div>
+
+        <div class="story-card reveal">
+          <p>Alors qu’il m’avait remarquée bien avant que je ne m’en rende compte, les taquineries de nos proches me surnommant « la femme de Respo » annonçaient déjà peut-être notre avenir. Aujourd’hui, guidés par l’amour et la grâce de Dieu, nous sommes heureux de vous inviter à célébrer le magnifique chapitre qui s’ouvre : notre mariage. 💍🙏</p>
+          <div class="couple-names">Elysée &amp; Euphrasie</div>
+          <div class="eyebrow">Pour toujours, avec la grâce de Dieu</div>
+        </div>
       </div>
     </section>
 
     <section class="section gallery">
-      <div class="reveal">
-        <div class="eyebrow">Quelques souvenirs</div>
-        <h2>Notre galerie</h2>
-        <p class="section-intro">Trois photos, une histoire et un amour à célébrer.</p>
-      </div>
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Nos souvenirs</div>
+          <h2>Un peu de nous</h2>
+          <p>Quelques images de deux vies qui avancent désormais vers un même horizon.</p>
+        </div>
 
-      <div class="gallery-grid">
-        <article class="gallery-card reveal">
-          <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
-          <h3>Nous deux</h3>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="photos/photo_2.png" alt="Photo du marié" loading="lazy">
-          <h3>Le marié</h3>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="photos/photo_5.png" alt="Photo de la mariée" loading="lazy">
-          <h3>La mariée</h3>
-        </article>
-      </div>
-    </section>
-
-    <section class="section program">
-      <div class="reveal">
-        <div class="eyebrow">Réservez cette journée</div>
-        <h2>Le programme du mariage</h2>
-        <p class="section-intro">Nous serons heureux de partager ces précieux moments avec vous.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item"><time>09 h 30</time><div><h3>Accueil des invités</h3></div></div>
-        <div class="timeline-item"><time>11 h 30</time><div><h3>Début de la cérémonie</h3></div></div>
-        <div class="timeline-item"><time>12 h 30</time><div><h3>Bénédiction nuptiale</h3></div></div>
-        <div class="timeline-item"><time>13 h 30</time><div><h3>Déjeuner</h3></div></div>
-        <div class="timeline-item"><time>14 h 30</time><div><h3>Prestation de ballet et surprise</h3></div></div>
-        <div class="timeline-item"><time>16 h 00</time><div><h3>Remise de présents au couple</h3></div></div>
-        <div class="timeline-item"><time>17 h 00</time><div><h3>Coupure du gâteau</h3></div></div>
-        <div class="timeline-item"><time>18 h 00</time><div><h3>Fin de la cérémonie</h3></div></div>
+        <div class="photo-grid reveal">
+          <figure class="photo-card">
+            <img src="photos/photo_1.png" alt="Photo du couple" loading="lazy">
+            <figcaption>Notre amour</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="photos/photo_2.png" alt="Photo du marié" loading="lazy">
+            <figcaption>Le marié</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="photos/photo_5.png" alt="Photo de la mariée" loading="lazy">
+            <figcaption>La mariée</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="reveal">
-        <div class="eyebrow">Le lieu de notre union</div>
-        <h2>Retrouvons-nous</h2>
-        <div class="venue-card">
+    <section class="section programme">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Le grand jour</div>
+          <h2>Programme de la journée</h2>
+          <p>Nous avons hâte de vivre ces beaux moments avec vous.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item"><div class="timeline-time">09h30</div><div><h3>Accueil des invités</h3><p>Installation et retrouvailles dans la joie.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">11h30</div><div><h3>Début de la cérémonie</h3><p>Un moment solennel pour célébrer notre engagement.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">12h30</div><div><h3>Bénédiction nuptiale</h3><p>Confier notre union à la grâce de Dieu.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">13h30</div><div><h3>Déjeuner</h3><p>Un repas partagé dans la convivialité.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">14h30</div><div><h3>Ballet et surprise</h3><p>Place à la joie, à la danse et aux surprises.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">16h00</div><div><h3>Présents aux mariés</h3><p>Un temps de partage et d'attentions.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">17h00</div><div><h3>Découpe du gâteau</h3><p>Un doux moment à immortaliser ensemble.</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">18h00</div><div><h3>Fin de la célébration</h3><p>Avec des souvenirs plein le cœur.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section venue">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Retrouvons-nous</div>
+          <h2>Le lieu de la célébration</h2>
+        </div>
+
+        <div class="venue-card reveal">
+          <div class="ornament">✦</div>
           <h3>The Rezy Event &amp; Lounge</h3>
           <p>Rue H26, Abidjan, Côte d’Ivoire</p>
-          <div class="gold-line"></div>
-          <p>Samedi 10 avril 2027</p>
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">Voir l'itinéraire</a>
+          <p>La bénédiction nuptiale et la réception se dérouleront au même endroit.</p>
+          <div style="margin-top:24px">
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Rezy+Event+%26+Lounge+Abidjan" target="_blank" rel="noopener">Voir l'itinéraire</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section attire">
-      <div class="reveal">
-        <div class="attire-symbol">✧</div>
-        <div class="eyebrow">Pour cette belle journée</div>
-        <h2>Tenue de fête</h2>
-        <p>Nous vous invitons à porter une tenue élégante et festive.</p>
+      <div class="wrap reveal">
+        <div class="eyebrow">Élégance du jour</div>
+        <div class="section-heading">
+          <h2>Tenue de cérémonie</h2>
+          <p>Une touche d'élégance dans les tons de notre célébration sera la bienvenue.</p>
+        </div>
+        <div class="attire-swatches" aria-label="Couleurs de la célébration">
+          <span class="swatch" style="background:#123b30" title="Vert bouteille"></span>
+          <span class="swatch" style="background:#741d32" title="Bordeaux"></span>
+          <span class="swatch" style="background:#fff9ee" title="Ivoire"></span>
+          <span class="swatch" style="background:#c9a45c" title="Or"></span>
+        </div>
+        <p>Vert bouteille · Bordeaux · Ivoire · Or</p>
       </div>
     </section>
 
-    <section class="section rsvp">
-      <div class="reveal">
-        <div class="eyebrow">Votre présence nous honore</div>
-        <h2>Confirmez votre présence</h2>
-        <p class="section-intro">Merci de nous faire savoir si vous serez parmi nous pour cette journée inoubliable.</p>
+    <section class="section rsvp" id="rsvp">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Votre présence nous réjouit</div>
+          <h2>Confirmez votre présence</h2>
+          <p>Merci de nous répondre à l'aide du formulaire ci-dessous.</p>
+        </div>
+
+        <form class="rsvp-form reveal" id="rsvp-form" action="https://formspree.io/f/mnppjjjj" method="POST">
+          <div class="form-grid">
+            <div class="field">
+              <label for="guest-name">Nom et prénom *</label>
+              <input id="guest-name" name="Nom et prénom" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="guest-email">Adresse e-mail</label>
+              <input id="guest-email" name="E-mail" type="email" autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="attendance">Serez-vous présent(e) ? *</label>
+              <select id="attendance" name="Présence" required>
+                <option value="">Choisir une réponse</option>
+                <option value="Oui, je serai présent(e)">Oui, je serai présent(e)</option>
+                <option value="Désolé(e), je ne pourrai pas venir">Désolé(e), je ne pourrai pas venir</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="guests">Nombre de personnes</label>
+              <select id="guests" name="Nombre de personnes">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 ou plus</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Un petit mot pour les mariés (facultatif)</label>
+              <textarea id="message" name="Message" placeholder="Votre message..."></textarea>
+            </div>
+          </div>
+
+          <input type="hidden" name="_subject" value="Nouvelle réponse RSVP - Mariage Elysée et Euphrasie">
+          <p class="form-note">Les champs marqués d'un astérisque sont obligatoires.</p>
+          <button class="btn" id="rsvp-submit" type="submit">Envoyer ma réponse</button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
       </div>
+    </section>
 
-      <form class="rsvp-form" action="https://formspree.io/f/mnppjjjj" method="POST">
-        <label for="guest-name">Votre nom complet</label>
-        <input id="guest-name" name="Nom complet" type="text" autocomplete="name" required>
+    <footer>
+      <div class="eyebrow">Avec amour</div>
+      <div class="script">Elysée &amp; Euphrasie</div>
+      <p>10 avril 2027 · Abidjan</p>
+      <p>Merci de faire partie de notre histoire.</p>
+    </footer>
+  </main>
 
-        <labe
+  <button class="music-control" id="music-control" type="button" hidden aria-pressed="false">♫ Mettre la musique en pause</button>
+
+  <audio id="wedding-music" loop preload="auto">
+    <source src="Dieu%20a%20fait.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const envelopeScreen = document.getElementById("envelope-screen");
+      const envelope = document.getElementById("envelope");
+      const openButton = document.getElementById("open-button");
+      const sealButton = document.getElementById("seal-button");
+      const mainSite = document.getElementById("main-site");
+      const music = document.getElementById("wedding-music");
+      const musicControl = document.getElementById("music-control");
+      let opened = false;
+
+      function openInvitation() {
+        if (opened) return;
+        opened = true;
+
+        envelope.classList.add("opening");
+
+        // La lecture est demandée directement après le clic de l'utilisateur.
+        musicControl.hidden = false;
+        musicControl.textContent = "♫ Mettre la musique en pause";
+
+        const playPromise = music.play();
+
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            musicControl.textContent = "♫ Lancer la musique";
+            musicControl.setAttribute("aria-pressed", "false");
+          });
+        } else {
+          musicControl.setAttribute("aria-pressed", "true");
+        }
+
+        window.setTimeout(() => {
+          envelopeScreen.classList.add("is-hidden");
+          envelopeScreen.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("locked");
+          mainSite.classList.add("visible");
+          mainSite.setAttribute("aria-hidden", "false");
+          window.scrollTo(0, 0);
+        }, 950);
+      }
+
+      openButton.addEventListener("click", openInvitation);
+      sealButton.addEventListener("click", openInvitation);
+
+      music.addEventListener("play", () => {
+        musicControl.textContent = "♫ Mettre la musique en pause";
+        musicControl.setAttribute("aria-pressed", "true");
+      });
+
+      music.addEventListener("pause", () => {
+        musicControl.textContent = "♫ Relancer la musique";
+        musicControl.setAttribute("aria-pressed", "false");
+      });
+
+      musicControl.addEventListener("click", async () => {
+        if (music.paused) {
+          try {
+            await music.play();
+          } catch (error) {
+            musicControl.textContent = "Musique indisponible";
+          }
+        } else {
+          music.pause();
+        }
+      });
+
+      function updateCountdown() {
+        const target = new Date("2027-04-10T09:30:00+00:00").getTime();
+        const diff = Math.max(0, target - Date.now());
+
+        document.getElementById("days").textContent = Math.floor(diff / 86400000);
+        document.getElementById("hours").textContent = Math.floor((diff % 86400000) / 3600000);
+        document.getElementById("minutes").textContent = Math.floor((diff % 3600000) / 60000);
+        document.getElementById("seconds").textContent = Math.floor((diff % 60000) / 1000);
+      }
+
+      updateCountdown();
+      window.setInterval(updateCountdown, 1000);
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+      } else {
+        document.querySelectorAll(".reveal").forEach(element => element.classList.add("in-view"));
+      }
+
+      const rsvpForm = document.getElementById("rsvp-form");
+      const formStatus = document.getElementById("form-status");
+      const rsvpSubmit = document.getElementById("rsvp-submit");
+
+      rsvpForm.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        if (!rsvpForm.reportValidity()) return;
+
+        rsvpSubmit.disabled = true;
+        rsvpSubmit.textContent = "Envoi en cours...";
+        formStatus.classList.remove("show");
+
+        try {
+          const response = await fetch(rsvpForm.action, {
+            method: "POST",
+            body: new FormData(rsvpForm),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            formStatus.textContent = "Merci ! Votre réponse a bien été envoyée.";
+            formStatus.classList.add("show");
+            rsvpForm.reset();
+          } else {
+            formStatus.textContent = "L'envoi n'a pas abouti. Vérifiez votre connexion puis réessayez.";
+            formStatus.classList.add("show");
+          }
+        } catch (error) {
+          formStatus.textContent = "Connexion impossible. Vérifiez votre connexion Internet puis réessayez.";
+          formStatus.classList.add("show");
+        } finally {
+          rsvpSubmit.disabled = false;
+          rsvpSubmit.textContent = "Envoyer ma réponse";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
